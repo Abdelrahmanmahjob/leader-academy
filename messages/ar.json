@@ -16,7 +16,9 @@
     "openMenu": "افتح قائمة التنقل",
     "closeMenu": "أغلق قائمة التنقل",
     "toggleClasses": "تبديل قائمة الفئات التدريبية",
-    "languageSwitch": "تغيير اللغة"
+    "languageSwitch": "تغيير اللغة",
+    "login": "تسجيل الدخول",
+    "homeLabel": "الصفحة الرئيسية لليدر أكاديمي"
   },
   "footer": {
     "brandDescription": "Leader Academy — تأسست عام 2023.",

@@ -6,20 +6,25 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { BrandLogo } from "./BrandLogo";
 import { ClassesDropdown } from "./ClassesDropdown";
+import { DockItemContent } from "./DockItem";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileNavigation } from "./MobileNavigation";
 import {
-  contactLink,
+  authLinks,
   ctaClass,
+  dockItemClass,
   isActivePath,
-  navItemClass,
+  loginClass,
   primaryLinks,
+  trailingLinks,
 } from "@/content/navigation";
 import { useGlassSheen } from "@/hooks/useGlassSheen";
 
-type NavLinkItem = (typeof primaryLinks)[number] | typeof contactLink;
+type NavLinkItem =
+  | (typeof primaryLinks)[number]
+  | (typeof trailingLinks)[number];
 
-function DesktopNavLink({ href, labelKey }: NavLinkItem) {
+function DesktopNavLink({ href, labelKey, icon }: NavLinkItem) {
   const pathname = usePathname();
   const t = useTranslations("navigation");
   const selected = isActivePath(pathname, href);
@@ -27,10 +32,11 @@ function DesktopNavLink({ href, labelKey }: NavLinkItem) {
   return (
     <Link
       href={href}
-      className={navItemClass(selected)}
+      className={dockItemClass(selected)}
+      data-selected={selected}
       aria-current={selected ? "page" : undefined}
     >
-      {t(labelKey)}
+      <DockItemContent Icon={icon} label={t(labelKey)} selected={selected} />
     </Link>
   );
 }
@@ -52,28 +58,33 @@ export function Navbar() {
           />
 
           <div className="relative z-10 flex h-16 items-center justify-between gap-4 ps-5 pe-2.5 lg:h-[72px] lg:ps-7 lg:pe-3">
-            <div className="flex items-center gap-6 xl:gap-8">
-              <BrandLogo />
+            <div className="flex items-center gap-5 xl:gap-8">
+              <BrandLogo hideNameAtLg />
               <span
                 aria-hidden="true"
                 className="hidden h-8 w-px bg-foreground/20 lg:block"
               />
-
-              <nav
-                aria-label={t("mainNavigation")}
-                className="hidden items-center gap-8 lg:flex"
-              >
-                {primaryLinks.map((link) => (
-                  <DesktopNavLink key={link.href} {...link} />
-                ))}
-                <ClassesDropdown />
-                <DesktopNavLink {...contactLink} />
-              </nav>
             </div>
+            {/* Dock: icons only, the active (or hovered) item opens into a labelled pill */}
+            <nav
+              aria-label={t("mainNavigation")}
+              className="hidden items-center gap-1.5 lg:flex"
+            >
+              {primaryLinks.map((link) => (
+                <DesktopNavLink key={link.href} {...link} />
+              ))}
+              <ClassesDropdown />
+              {trailingLinks.map((link) => (
+                <DesktopNavLink key={link.href} {...link} />
+              ))}
+            </nav>
 
-            <div className="hidden items-center gap-3 lg:flex">
+            <div className="hidden items-center gap-2.5 lg:flex">
               <LanguageSwitcher />
-              <Link href="/contact" className={ctaClass}>
+              <Link href={authLinks.login} className={loginClass}>
+                {t("login")}
+              </Link>
+              <Link href={authLinks.signUp} className={ctaClass}>
                 {t("getStarted")}
               </Link>
             </div>

@@ -15,7 +15,13 @@ import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { ctaClass, isActivePath, mobileLinks } from "@/content/navigation";
+import {
+  authLinks,
+  ctaClass,
+  isActivePath,
+  loginClass,
+  mobileLinks,
+} from "@/content/navigation";
 import { useDirection } from "@/hooks/useDirection";
 
 const FOCUSABLE =
@@ -248,7 +254,22 @@ export function MobileNavigation() {
                             aria-current={selected ? "page" : undefined}
                             onClick={() => closeMenu(false)}
                           >
-                            {t(link.labelKey)}
+                            <span className="flex items-center gap-4">
+                              <span
+                                className={`flex size-10 items-center justify-center rounded-xl transition-colors duration-200 ${
+                                  selected
+                                    ? "bg-accent text-inverse"
+                                    : "bg-foreground/10 text-foreground"
+                                }`}
+                              >
+                                <link.icon
+                                  className="size-5"
+                                  strokeWidth={1.8}
+                                  aria-hidden="true"
+                                />
+                              </span>
+                              {t(link.labelKey)}
+                            </span>
                             <ChevronRight
                               className={`size-5 rtl:rotate-180 ${selected ? "text-accent" : "text-muted"}`}
                               aria-hidden="true"
@@ -266,13 +287,22 @@ export function MobileNavigation() {
                 className="glass-panel mt-3 flex flex-wrap items-center justify-between gap-3 rounded-3xl p-3 [-webkit-backdrop-filter:none] [backdrop-filter:none]"
               >
                 <LanguageSwitcher />
-                <Link
-                  href="/contact"
-                  className={ctaClass}
-                  onClick={() => closeMenu(false)}
-                >
-                  {t("getStarted")}
-                </Link>
+                <div className="flex min-w-0 flex-1 gap-3">
+                  <Link
+                    href={authLinks.login}
+                    className={`${loginClass} flex-1`}
+                    onClick={() => closeMenu(false)}
+                  >
+                    {t("login")}
+                  </Link>
+                  <Link
+                    href={authLinks.signUp}
+                    className={`${ctaClass} flex-1`}
+                    onClick={() => closeMenu(false)}
+                  >
+                    {t("getStarted")}
+                  </Link>
+                </div>
               </div>
             </div>,
             document.body,

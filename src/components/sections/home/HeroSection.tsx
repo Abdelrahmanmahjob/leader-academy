@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Button, buttonVariants } from "@/components/ui/Button";
+import { buttonVariants } from "@/components/ui/Button";
 import { useDirection } from "@/hooks/useDirection";
 
 const slides = [
@@ -54,8 +53,6 @@ export function HeroSection() {
   const paused = hovered || focused;
   const slideIndex = String(activeSlide);
   const slide = slides[activeSlide];
-  const PreviousArrow = isRtl ? ArrowRight : ArrowLeft;
-  const NextArrow = isRtl ? ArrowLeft : ArrowRight;
 
   // One effect per slide, for both manual and automatic changes:
   // content reveal + the autoplay progress tween that advances the slide.
@@ -296,31 +293,6 @@ export function HeroSection() {
                 </button>
               );
             })}
-          </div>
-
-          <div className="flex items-center justify-end gap-2">
-            <Button
-              variant="glass"
-              size="icon-lg"
-              className="size-11 rounded-full"
-              aria-label={t("previousSlide")}
-              onClick={() =>
-                setActiveSlide(
-                  (activeSlide - 1 + slides.length) % slides.length,
-                )
-              }
-            >
-              <PreviousArrow className="size-5" aria-hidden="true" />
-            </Button>
-            <Button
-              variant="glass"
-              size="icon-lg"
-              className="size-11 rounded-full"
-              aria-label={t("nextSlide")}
-              onClick={() => setActiveSlide((activeSlide + 1) % slides.length)}
-            >
-              <NextArrow className="size-5" aria-hidden="true" />
-            </Button>
           </div>
         </div>
       </div>

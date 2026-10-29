@@ -6,9 +6,15 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { classesLinks, isActivePath, navItemClass } from "@/content/navigation";
+import {
+  classesLinks,
+  classesMenu,
+  dockItemClass,
+  isActivePath,
+} from "@/content/navigation";
 import { useDirection } from "@/hooks/useDirection";
 import { useGlassSheen } from "@/hooks/useGlassSheen";
+import { DockItemContent } from "./DockItem";
 
 const CLOSE_DELAY_MS = 140;
 
@@ -152,7 +158,9 @@ export function ClassesDropdown() {
       <button
         ref={triggerRef}
         type="button"
-        className={navItemClass(active)}
+        className={dockItemClass(active)}
+        data-selected={active}
+        data-open={open}
         aria-expanded={open}
         aria-controls={menuId}
         onPointerDown={(event) => {
@@ -165,10 +173,16 @@ export function ClassesDropdown() {
           setOpen((value) => (mouseClick ? true : !value));
         }}
       >
-        {t("classes")}
-        <ChevronDown
-          className={`size-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-          aria-hidden="true"
+        <DockItemContent
+          Icon={classesMenu.icon}
+          label={t(classesMenu.labelKey)}
+          selected={active}
+          trailing={
+            <ChevronDown
+              className={`ms-1.5 size-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+              aria-hidden="true"
+            />
+          }
         />
       </button>
 
@@ -182,17 +196,22 @@ export function ClassesDropdown() {
           <ul className="flex flex-col gap-0.5">
             {classesLinks.map((item) => {
               const selected = isActivePath(pathname, item.href);
+              const Icon = item.icon;
               return (
                 <li key={item.href} data-menu-item>
                   <Link
                     href={item.href}
-                    className={`flex min-h-11 items-center justify-between gap-3 rounded-xl px-3 text-sm font-semibold transition-colors duration-200 hover:bg-foreground/10 focus-visible:outline-offset-[-2px] ${
+                    className={`flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-semibold transition-colors duration-200 hover:bg-foreground/10 focus-visible:outline-offset-[-2px] ${
                       selected ? "text-accent" : "text-foreground"
                     }`}
                     aria-current={selected ? "page" : undefined}
                     onClick={() => setOpen(false)}
                   >
-                    {t(item.labelKey)}
+                    <Icon
+                      className={`size-4 ${selected ? "text-accent" : "text-muted"}`}
+                      aria-hidden="true"
+                    />
+                    <span className="flex-1">{t(item.labelKey)}</span>
                     {selected ? (
                       <span
                         aria-hidden="true"

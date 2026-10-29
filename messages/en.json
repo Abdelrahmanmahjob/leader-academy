@@ -16,7 +16,9 @@
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu",
     "toggleClasses": "Toggle Classes menu",
-    "languageSwitch": "Switch language"
+    "languageSwitch": "Switch language",
+    "login": "Log in",
+    "homeLabel": "Leader Academy home"
   },
   "footer": {
     "brandDescription": "Leader Academy — established 2023.",
