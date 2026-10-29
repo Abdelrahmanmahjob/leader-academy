@@ -1,26 +1,370 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --la-background: #121212;
+  --la-surface: #1e1e1e;
+  --la-surface-raised: #242424;
+  --la-border: #2d2d2d;
+  --la-border-strong: #383838;
+  --la-foreground: #ffffff;
+  --la-muted: #a1a1aa;
+  --la-inverse: #111111;
+  --la-accent: #25d366;
+  --la-hover: #2a2a2a;
+  --la-section-space: 4rem;
+  --background: var(--la-background);
+  --foreground: var(--la-foreground);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--la-background);
+  --color-surface: var(--la-surface);
+  --color-surface-raised: var(--la-surface-raised);
+  --color-border: var(--la-border);
+  --color-border-strong: var(--la-border-strong);
+  --color-foreground: var(--la-foreground);
+  --color-muted: var(--la-muted);
+  --color-inverse: var(--la-inverse);
+  --color-accent: var(--la-accent);
+  --color-hover: var(--la-hover);
+  --font-sans: var(--font-montserrat);
+  --font-arabic: var(--font-cairo);
+  --text-hero: clamp(3rem, 6vw, 4rem);
+  --text-section-heading: clamp(2rem, 4vw, 2.5rem);
+  --text-card-heading: 1.5rem;
+  --spacing-section: var(--la-section-space);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--la-background);
+  color: var(--la-foreground);
+}
+
+::selection {
+  background: var(--la-accent);
+  color: var(--la-inverse);
+}
+
+:focus-visible {
+  outline: 2px solid var(--la-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  html[dir="rtl"] {
+    font-family: var(--font-cairo), sans-serif;
+  }
+}
+/* ---------------------------------------------------------------
+   Liquid Glass — append to the end of globals.css.
+   Every colour is derived from the existing --la-* tokens.
+   --------------------------------------------------------------- */
+
+@layer components {
+  /* Floating capsule navbar. Applied to a sibling layer behind the content so
+     its backdrop-filter never traps the dropdown's own glass. Parent needs .glass-host. */
+  .glass-pill {
+    isolation: isolate;
+    border: 1px solid color-mix(in srgb, var(--la-foreground) 24%, transparent);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--la-foreground) 12%, transparent),
+        color-mix(in srgb, var(--la-foreground) 3%, transparent)
+      ),
+      color-mix(in srgb, var(--la-background) 42%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(20px) saturate(160%);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--la-foreground) 30%, transparent),
+      inset 0 -1px 0 color-mix(in srgb, var(--la-foreground) 8%, transparent),
+      inset 0 0 22px -8px
+        color-mix(in srgb, var(--la-foreground) 18%, transparent),
+      0 18px 40px -18px color-mix(in srgb, var(--la-inverse) 90%, transparent);
+  }
+
+  /* Raised glass surface: dropdown, buttons, mobile sheet */
+  .glass-panel {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid color-mix(in srgb, var(--la-foreground) 11%, transparent);
+    background:
+      linear-gradient(
+        150deg,
+        color-mix(in srgb, var(--la-foreground) 10%, transparent) 0%,
+        color-mix(in srgb, var(--la-foreground) 2%, transparent) 45%,
+        color-mix(in srgb, var(--la-accent) 6%, transparent) 100%
+      ),
+      color-mix(in srgb, var(--la-surface) 58%, transparent);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    backdrop-filter: blur(22px) saturate(170%);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--la-foreground) 20%, transparent),
+      inset 0 -14px 24px -18px
+        color-mix(in srgb, var(--la-inverse) 70%, transparent),
+      0 24px 48px -18px color-mix(in srgb, var(--la-inverse) 90%, transparent);
+  }
+
+  /* Specular edge along the top */
+  .glass-panel::after,
+  .glass-pill::after,
+  .glass-button::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 12%;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--la-foreground) 38%, transparent),
+      transparent
+    );
+  }
+
+  /* Pointer-following light (position fed by useGlassSheen) */
+  .glass-panel::before,
+  .glass-pill::before,
+  .glass-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    background: radial-gradient(
+      220px circle at var(--glass-x, 50%) var(--glass-y, 0%),
+      color-mix(in srgb, var(--la-foreground) 13%, transparent),
+      transparent 70%
+    );
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .glass-panel:hover::before,
+    .glass-button:hover::before,
+    .glass-host:hover > .glass-pill::before {
+      opacity: 1;
+    }
+  }
+
+  /* Glass button (Button variants "glass" / "glass-accent"). Tint is overridable via --glass-tint. */
+  .glass-button {
+    position: relative;
+    isolation: isolate;
+    border-color: color-mix(in srgb, var(--la-foreground) 22%, transparent);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--la-foreground) 16%, transparent),
+        color-mix(in srgb, var(--la-foreground) 3%, transparent) 55%
+      ),
+      color-mix(
+        in srgb,
+        var(--glass-tint, var(--la-surface)) var(--glass-tint-mix, 45%),
+        transparent
+      );
+    -webkit-backdrop-filter: blur(14px) saturate(170%);
+    backdrop-filter: blur(14px) saturate(170%);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--la-foreground) 32%, transparent),
+      inset 0 -8px 14px -10px
+        color-mix(in srgb, var(--la-inverse) 65%, transparent),
+      0 8px 20px -10px color-mix(in srgb, var(--la-inverse) 85%, transparent);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.15s ease;
+  }
+  .glass-button:hover {
+    border-color: color-mix(in srgb, var(--la-foreground) 36%, transparent);
+  }
+  .glass-button:active {
+    box-shadow:
+      inset 0 2px 8px color-mix(in srgb, var(--la-inverse) 55%, transparent),
+      inset 0 1px 0 color-mix(in srgb, var(--la-foreground) 14%, transparent);
+  }
+
+  /* Full-screen mobile menu backdrop with a faint accent glow */
+  .glass-button::before {
+    background: radial-gradient(
+      90px circle at var(--glass-x, 50%) var(--glass-y, 0%),
+      color-mix(in srgb, var(--la-foreground) 22%, transparent),
+      transparent 75%
+    );
+  }
+
+  .glass-overlay {
+    background:
+      radial-gradient(
+        70% 45% at 100% 0%,
+        color-mix(in srgb, var(--la-accent) 14%, transparent),
+        transparent 70%
+      ),
+      color-mix(in srgb, var(--la-background) 62%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
+  }
+  [dir="rtl"] .glass-overlay {
+    background:
+      radial-gradient(
+        70% 45% at 0% 0%,
+        color-mix(in srgb, var(--la-accent) 14%, transparent),
+        transparent 70%
+      ),
+      color-mix(in srgb, var(--la-background) 62%, transparent);
+  }
+}
+
+/* Opaque fallbacks when backdrop-filter is unavailable */
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .glass-pill {
+    background: color-mix(in srgb, var(--la-background) 94%, transparent);
+  }
+  .glass-panel {
+    background: var(--la-surface);
+  }
+  .glass-button {
+    background: var(--la-surface);
+  }
+  .glass-overlay {
+    background: color-mix(in srgb, var(--la-background) 97%, transparent);
+  }
 }

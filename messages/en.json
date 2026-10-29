@@ -1,0 +1,423 @@
+{
+  "common": {
+    "skipToContent": "Skip to content"
+  },
+  "navigation": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "classes": "Classes",
+    "timetable": "Timetable",
+    "trainers": "Trainers",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "mainNavigation": "Main navigation",
+    "menu": "Menu",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "toggleClasses": "Toggle Classes menu",
+    "languageSwitch": "Switch language"
+  },
+  "footer": {
+    "brandDescription": "Leader Academy — established 2023.",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "contactCta": "Get in touch",
+    "copyright": "© 2026 Leader Academy. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Leader Academy — 2023",
+      "label": "Featured highlights",
+      "slides": [
+        {
+          "title": "ACHIEVE MORE THAN JUST FITNESS",
+          "description": "Combine strength, flexibility, and endurance in a community that values well-rounded health and supportive growth.",
+          "primary": "Start Now",
+          "secondary": "View Services"
+        },
+        {
+          "title": "TRAIN WITH PURPOSE",
+          "description": "Coaches, classes, and programs built around your goals — not a one-size-fits-all routine.",
+          "primary": "Meet Trainers",
+          "secondary": "View Services"
+        }
+      ],
+      "stats": [
+        {
+          "value": "500+",
+          "title": "Happy Members",
+          "description": "Our community is growing fast!"
+        },
+        {
+          "value": "30+",
+          "title": "Weekly Classes",
+          "description": "Pick from various workouts"
+        },
+        {
+          "value": "10+",
+          "title": "Certified Trainers",
+          "description": "Guidance at every step"
+        },
+        {
+          "value": "99%",
+          "title": "Customer Satisfaction",
+          "description": "We ensure your progress satisfaction"
+        }
+      ],
+      "previousSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "goToSlide": "Go to slide"
+    },
+    "paths": {
+      "title": "CHOOSE OUR PATH TO FITNESS",
+      "viewMore": "View More",
+      "cards": [
+        {
+          "eyebrow": "ALL LEVELS",
+          "title": "10-12",
+          "summary": "Build muscle and increase stamina",
+          "description": "Progressive strength sessions with coaching cues, form support, and programming that scales with you.",
+          "image": "/images/home-page/our-paths/our-paths1.png",
+          "href": "/services/strength"
+        },
+        {
+          "eyebrow": "INTERMEDIATE",
+          "title": "13-15",
+          "summary": "Heart health and weight loss",
+          "description": "High-energy cardio classes that mix intervals, cycling, and athletic conditioning.",
+          "image": "/images/home-page/our-paths/our-paths2.jpg",
+          "href": "/services/cardio"
+        },
+        {
+          "eyebrow": "ELITE",
+          "title": "16-18",
+          "summary": "Clarity, mobility, and recovery",
+          "description": "Flow, stretch, and breath work to restore mobility and keep you training consistently.",
+          "image": "/images/home-page/our-paths/our-paths3.png",
+          "href": "/services/mobility"
+        }
+      ]
+    },
+    "partner": {
+      "title": "WHY Leader Academy IS YOUR IDEAL FITNESS PARTNER",
+      "videoLabel": "Leader Academy training experience",
+      "benefits": [
+        {
+          "title": "Personalized Training",
+          "description": "Workout plans designed for your goals, so every session moves you forward."
+        },
+        {
+          "title": "Flexible Schedules",
+          "description": "Early morning to late night classes — pick the time that fits your life."
+        },
+        {
+          "title": "Expert Coaches",
+          "description": "Certified trainers and nutrition guidance to support lasting results."
+        },
+        {
+          "title": "Membership Plans",
+          "description": "Flexible packages with class access — buy online and start training."
+        }
+      ]
+    },
+    "cta": {
+      "title": "READY TO KICK THINGS OFF WITH Leader Academy?",
+      "description": "Reserve your spot today",
+      "button": "JOIN NOW"
+    },
+    "about": {
+      "eyebrow": "About Leader Academy",
+      "coachesEyebrow": "Our Coaches",
+      "heroImageAlt": "Leader Academy training community",
+      "videoImageAlt": "Leader Academy team and training",
+      "videoDialog": "Leader Academy video",
+      "playVideo": "Play Leader Academy video",
+      "closeVideo": "Close video",
+      "partnersLabel": "Partner integrations",
+      "ctaTitle": "Train with the best",
+      "ctaDescription": "Meet every coach on our team and find the one who fits your goals.",
+      "introTitle": "EMPOWERING YOUR FITNESS JOURNEY",
+      "introDescription": "Welcome to Leader Academy, where a healthier, happier you starts with personalized training and a supportive community. Our studio is a space for transformation, where people of every fitness level come together to reach their goals. With a focus on innovation and inclusivity, training here is more than a workout — it's a lifestyle.",
+      "valuesTitle": "OUR Core Values",
+      "valuesDescription": "guide everything we do",
+      "values": [
+        {
+          "title": "Community",
+          "description": "Building a culture of belonging and encouragement."
+        },
+        {
+          "title": "Inclusivity",
+          "description": "Welcoming every body type, ability, and fitness level."
+        },
+        {
+          "title": "Innovation",
+          "description": "Delivering modern training methods and technology."
+        },
+        {
+          "title": "Personalization",
+          "description": "Shaping programs around each member's goals."
+        }
+      ],
+      "videoTitle": "TRAINING THAT MOVES YOU FORWARD",
+      "videoDescription": "See the energy, coaching, and community inside Leader Academy.",
+      "expertsTitle": "MEET THE EXPERT",
+      "expertsDescription": "Each coach brings distinct expertise so every session feels complete and well-rounded.",
+      "seeMore": "See more",
+      "experts": [
+        {
+          "name": "Strength Coach",
+          "role": "Performance & Strength",
+          "image": "/images/trainer-page/coach1.jpeg"
+        },
+        {
+          "name": "Cardio Coach",
+          "role": "Endurance & Conditioning",
+          "image": "/images/trainer-page/coach2.jpg"
+        },
+        {
+          "name": "Mobility Coach",
+          "role": "Recovery & Movement",
+          "image": "/images/trainer-page/coach3.webp"
+        }
+      ]
+    },
+    "servicesPage": {
+      "pathsTitle": "ELEVATE YOUR WORKOUT EXPERIENCE",
+      "packagesTitle": "SERVICE PACKAGES",
+      "viewPackages": "View Packages",
+      "moreTitle": "MORE SERVICES",
+      "services": {
+        "strength": {
+          "name": "Strength & Fitness",
+          "eyebrow": "BUILD POWER",
+          "description": "Progressive strength coaching built around your movement level, goals, and recovery. Learn proper form, build confidence, and develop lasting muscle and stamina.",
+          "highlights": [
+            "Personalized programming",
+            "Technique and form coaching",
+            "Progress tracking every 4 weeks"
+          ],
+          "packagesDescription": "Packages for Strength & Fitness"
+        },
+        "cardio": {
+          "name": "Cardio & Heart Health",
+          "eyebrow": "BOOST ENDURANCE",
+          "description": "High-energy sessions combining intervals, cycling, and athletic conditioning. Improve heart health, burn energy, and build endurance in a motivating group environment.",
+          "highlights": [
+            "Coach-led interval sessions",
+            "Cardio and cycling options",
+            "Beginner-friendly modifications"
+          ],
+          "packagesDescription": "Packages for Cardio & Heart Health"
+        },
+        "mobility": {
+          "name": "Mobility & Recovery",
+          "eyebrow": "RESTORE BALANCE",
+          "description": "Flow, stretch, and breath work designed to improve mobility, reduce tension, and support consistent training. Leave feeling stronger, calmer, and ready for your next session.",
+          "highlights": [
+            "Mobility and flexibility work",
+            "Guided breath and recovery",
+            "Small, focused groups"
+          ],
+          "packagesDescription": "Packages for Mobility & Recovery"
+        }
+      },
+      "packagePrices": {
+        "strength": [
+          {
+            "name": "Strength Drop-in",
+            "price": "90",
+            "unit": "session",
+            "description": "One coached strength class with form support."
+          },
+          {
+            "name": "Strength 8-pack",
+            "price": "640",
+            "unit": "8 sessions",
+            "description": "Progressive blocks for consistent strength training."
+          }
+        ],
+        "cardio": [
+          {
+            "name": "Cardio Drop-in",
+            "price": "75",
+            "unit": "session",
+            "description": "One high-energy cardio session with a coach."
+          },
+          {
+            "name": "Cardio 8-pack",
+            "price": "520",
+            "unit": "8 sessions",
+            "description": "Build endurance with eight guided classes."
+          }
+        ],
+        "mobility": [
+          {
+            "name": "Mobility Drop-in",
+            "price": "70",
+            "unit": "session",
+            "description": "One focused mobility and recovery session."
+          },
+          {
+            "name": "Mobility 8-pack",
+            "price": "480",
+            "unit": "8 sessions",
+            "description": "Eight flow, stretch, and recovery sessions."
+          }
+        ]
+      },
+      "packageCards": {
+        "dropIn": {
+          "name": "Drop-in session",
+          "price": "80",
+          "unit": "session",
+          "description": "One guided class with no long-term commitment."
+        },
+        "pack8": {
+          "name": "8-session pack",
+          "price": "560",
+          "unit": "8 sessions",
+          "description": "A flexible block for building a consistent routine."
+        }
+      }
+    },
+    "pricing": {
+      "title": "FLEXIBLE PLANS FOR EVERY BUDGET",
+      "description": "Choose a membership package and start training.",
+      "period": "month",
+      "features": "Features",
+      "getStarted": "Get Started",
+      "popular": "Most Popular",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": "199",
+          "description": "Build a consistent training routine with essential gym access and support.",
+          "features": [
+            "Full gym access",
+            "2 coached classes monthly",
+            "Fitness assessment",
+            "Basic training plan",
+            "Community support"
+          ]
+        },
+        {
+          "name": "Professional",
+          "price": "399",
+          "description": "Train with more structure, variety, and guidance to accelerate your progress.",
+          "features": [
+            "Unlimited gym access",
+            "8 coached classes monthly",
+            "Personal monthly review",
+            "Custom training program",
+            "Nutrition starter guide"
+          ]
+        },
+        {
+          "name": "Elite",
+          "price": "699",
+          "description": "The complete performance package with premium coaching and recovery support.",
+          "features": [
+            "Unlimited gym access",
+            "Unlimited coached classes",
+            "Dedicated personal coach",
+            "Monthly performance review",
+            "Priority recovery sessions"
+          ]
+        }
+      ]
+    }
+  },
+  "foundation": {
+    "title": "Foundation ready",
+    "description": "The multilingual project foundation is in place."
+  },
+  "routes": {
+    "aboutUs": "About Us",
+    "services": "Services",
+    "classes": "Classes",
+    "timetable": "Timetable",
+    "trainers": "Trainers",
+    "contact": "Contact"
+  },
+  "trainersPage": {
+    "eyebrow": "LEADER TEAM",
+    "title": "MEET YOUR TRAINERS",
+    "description": "Specialist coaches with the experience to make every session focused and effective.",
+    "coach1": {
+      "name": "Omar Al Harbi",
+      "role": "Strength & Conditioning",
+      "title": "Strength Coach",
+      "subtitle": "Performance & Strength"
+    },
+    "coach2": {
+      "name": "Sara Al Faisal",
+      "role": "Cardio & Performance",
+      "title": "Cardio Coach",
+      "subtitle": "Endurance & Conditioning"
+    },
+    "coach3": {
+      "name": "Nora Khalid",
+      "role": "Mobility & Recovery",
+      "title": "Mobility Coach",
+      "subtitle": "Recovery & Movement"
+    },
+    "ctaTitle": "FIND YOUR TRAINING PATH",
+    "ctaDescription": "Explore coached classes designed around strength, endurance, and recovery."
+  },
+  "classesPage": {
+    "eyebrow": "TRAIN TOGETHER",
+    "title": "CLASSES FOR EVERY GOAL",
+    "description": "Choose a class format that matches your training age, schedule, and ambition.",
+    "strength": {
+      "name": "Strength Training",
+      "text": "Build power and confidence with coached progressive sessions."
+    },
+    "cardio": {
+      "name": "Cardio & Endurance",
+      "text": "Improve fitness through energetic interval and conditioning classes."
+    },
+    "mobility": {
+      "name": "Mobility & Recovery",
+      "text": "Move better, recover consistently, and keep your body training-ready."
+    },
+    "viewSchedule": "View schedule"
+  },
+  "timetablePage": {
+    "eyebrow": "WEEKLY PLAN",
+    "title": "CLASS TIMETABLE",
+    "duration": "60 min · All levels",
+    "daysLabel": "Select a day",
+    "today": "Today",
+    "classes": {
+      "strength": "Strength",
+      "mobility": "Mobility",
+      "cardio": "Cardio"
+    }
+  },
+  "contactPage": {
+    "eyebrow": "LET'S TALK",
+    "title": "START YOUR JOURNEY",
+    "description": "Tell us what you want to achieve. Our team will help you choose the right path.",
+    "name": "Full name",
+    "phone": "Phone number",
+    "email": "Email address",
+    "message": "How can we help?",
+    "send": "Send message",
+    "formLabel": "Contact form",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "addressLabel": "Location",
+    "address": "Riyadh, Saudi Arabia",
+    "sending": "Sending…",
+    "successTitle": "Message sent",
+    "successDescription": "Thank you for reaching out. We have received your message.",
+    "sendAnother": "Send another message",
+    "errorMessage": "Something went wrong and your message was not sent. Please try again.",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "phone": "Enter a valid phone number."
+    }
+  }
+}

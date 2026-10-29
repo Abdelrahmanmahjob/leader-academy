@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Leader Academy
 
-## Getting Started
+The project uses Next.js App Router, TypeScript, Tailwind CSS 4, and `next-intl`.
+Arabic (`ar`) is the default locale; English (`en`) is also supported.
 
-First, run the development server:
+## Development
 
-```bash
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The locale proxy redirects
+the root route to a locale-prefixed route. Use `/ar` and `/en` to verify both
+foundation states directly.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+npm run typecheck
+npm run lint
+npm run build
+```
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/[locale]` contains the locale root layout and foundation route.
+- `src/i18n` centralizes routing, navigation helpers, and request messages.
+- `messages` contains the Arabic and English translation skeletons.
+- `src/components/ui` contains the shared `Container`, `Section`, and `Button`.
+- `src/app/globals.css` maps the supplied design tokens to Tailwind utilities.
+- `design.md` and `public/brand/logo.webp` are the supplied brand assets.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The work is intentionally limited to Milestone 0. No site navigation, footer,
+or marketing-page content has been implemented.
