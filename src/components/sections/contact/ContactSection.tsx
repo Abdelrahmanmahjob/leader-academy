@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { useDirection } from "@/hooks/useDirection";
-import type { ContactFormData } from "@/app/api/contact/route";
+import type { ContactFormData } from "@/lib/contact";
 import { ContactForm } from "./ContactForm";
 import { ContactInfo } from "./ContactInfo";
 import { gsap, useGSAP } from "./GsapSetup";

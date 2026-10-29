@@ -25,7 +25,34 @@
     "quickLinks": "روابط سريعة",
     "contact": "التواصل",
     "contactCta": "تواصل معنا",
-    "copyright": "© 2026 Leader Academy. جميع الحقوق محفوظة."
+    "copyright": "© 2026 Anan Sustainability. جميع الحقوق محفوظة.",
+    "explore": "استكشف",
+    "meetTheTeam": "تعرّف على الفريق",
+    "terms": "الشروط والأحكام",
+    "privacy": "سياسة الخصوصية",
+    "legal": "روابط قانونية",
+    "contactInfo": "معلومات التواصل",
+    "address": "مركز الشركات الناشئة، الدرعية، الرياض، المملكة العربية السعودية",
+    "needHelp": "تحتاج إلى مساعدة؟",
+    "followUs": "تابع أكاديمية ليدر على وسائل التواصل",
+    "social": {
+      "facebook": "فيسبوك",
+      "instagram": "إنستغرام",
+      "youtube": "يوتيوب",
+      "tiktok": "تيك توك"
+    },
+    "newsletterTitle": "اشترك في نشرتنا البريدية",
+    "newsletterDescription": "احصل على تحديثات الحصص والعروض وأخبار النادي في بريدك.",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "subscribe": "اشترك",
+    "subscribing": "جارٍ الاشتراك…",
+    "consent": "أوافق على تلقي التحديثات وأقبل <privacy>سياسة الخصوصية</privacy>.",
+    "subscribeSuccess": "تم اشتراكك بنجاح. تحقق من بريدك للتأكيد.",
+    "errorInvalidEmail": "أدخل بريدًا إلكترونيًا صحيحًا.",
+    "errorConsent": "يرجى الموافقة للمتابعة.",
+    "errorFailed": "تعذّر إتمام الاشتراك. حاول مرة أخرى.",
+    "paymentMethods": "طرق الدفع المتاحة"
   },
   "home": {
     "hero": {
@@ -80,7 +107,7 @@
           "title": "10-12",
           "summary": "بناء العضلات وزيادة القدرة",
           "description": "جلسات قوة متدرجة مع توجيه المدرب ودعم التقنية وبرنامج يتطور مع مستواك.",
-          "image": "/images/home-page/our-paths/our-paths1.png",
+          "image": "/images/home-page/our-paths/our-paths1.webp",
           "href": "/services/strength"
         },
         {
@@ -88,7 +115,7 @@
           "title": "13-15",
           "summary": "صحة القلب وفقدان الوزن",
           "description": "حصص كارديو عالية الطاقة تجمع التمارين المتقاطعة والدراجات والتكييف الرياضي.",
-          "image": "/images/home-page/our-paths/our-paths2.jpg",
+          "image": "/images/home-page/our-paths/our-paths2.webp",
           "href": "/services/cardio"
         },
         {
@@ -96,8 +123,145 @@
           "title": "16-18",
           "summary": "الصفاء والحركة والاستشفاء",
           "description": "تمارين التدفق والإطالة والتنفس لاستعادة الحركة والاستمرار في التدريب بثبات.",
-          "image": "/images/home-page/our-paths/our-paths3.png",
+          "image": "/images/home-page/our-paths/our-paths3.webp",
           "href": "/services/mobility"
+        },
+        {
+          "eyebrow": "متقدم",
+          "title": "19-21",
+          "summary": "عزز ثقتك من خلال كرة القدم",
+          "description": "طوّر مهاراتك الفنية وقوتك ولياقتك للمباريات مع تدريب مركز وفريق داعم.",
+          "image": "/images/home-page/our-paths/our-paths4.webp",
+          "href": "/services/football"
+        }
+      ]
+    },
+    "weeklyClasses": {
+      "eyebrow": "تدرّب بالطريقة التي تناسبك",
+      "title": "أسبوع مصمم لأهدافك",
+      "description": "اجعل للتقدم مكانًا في جدولك. استكشف أسبوعًا كاملًا من حصص القوة والكارديو والمرونة وكرة القدم بإشراف مدربين، واختر ما يناسب روتينك.",
+      "boardEyebrow": "جدول الحصص الأسبوعي",
+      "chooseDay": "اختر يومًا لعرض حصصه",
+      "boardNote": "لمحة عن جدول حصص هذا الأسبوع.",
+      "viewSchedule": "عرض الجدول الكامل",
+      "stats": [
+        { "value": "+30", "label": "حصة كل أسبوع" },
+        { "value": "7", "label": "أيام للتدريب" },
+        { "value": "4", "label": "مسارات للتقدم" }
+      ],
+      "days": [
+        {
+          "id": "sat",
+          "label": "س",
+          "name": "السبت",
+          "sessions": [
+            { "time": "06:00", "title": "أساسيات القوة", "track": "القوة" },
+            { "time": "17:30", "title": "تكييف الكارديو", "track": "الكارديو" },
+            { "time": "19:00", "title": "تدفق الحركة", "track": "المرونة" },
+            {
+              "time": "20:00",
+              "title": "مهارات كرة القدم",
+              "track": "كرة القدم"
+            }
+          ]
+        },
+        {
+          "id": "sun",
+          "label": "ح",
+          "name": "الأحد",
+          "sessions": [
+            { "time": "07:00", "title": "القوة الوظيفية", "track": "القوة" },
+            { "time": "18:00", "title": "دراجات هيت", "track": "الكارديو" },
+            { "time": "19:30", "title": "تمدد واستشفاء", "track": "المرونة" },
+            { "time": "20:30", "title": "أداء كرة القدم", "track": "كرة القدم" }
+          ]
+        },
+        {
+          "id": "mon",
+          "label": "ن",
+          "name": "الاثنين",
+          "sessions": [
+            { "time": "06:30", "title": "تدريب قوة متدرج", "track": "القوة" },
+            { "time": "17:30", "title": "فترات رياضية", "track": "الكارديو" },
+            {
+              "time": "19:00",
+              "title": "مرونة بإرشاد المدرب",
+              "track": "المرونة"
+            },
+            {
+              "time": "20:00",
+              "title": "تطوير كرة القدم",
+              "track": "كرة القدم"
+            }
+          ]
+        },
+        {
+          "id": "tue",
+          "label": "ث",
+          "name": "الثلاثاء",
+          "sessions": [
+            { "time": "07:00", "title": "دائرة القوة", "track": "القوة" },
+            { "time": "18:00", "title": "دراجة التحمل", "track": "الكارديو" },
+            { "time": "19:30", "title": "تمدد واستعادة", "track": "المرونة" },
+            {
+              "time": "20:30",
+              "title": "تكتيكات كرة القدم",
+              "track": "كرة القدم"
+            }
+          ]
+        },
+        {
+          "id": "wed",
+          "label": "ر",
+          "name": "الأربعاء",
+          "sessions": [
+            { "time": "06:00", "title": "قوة الجسم بالكامل", "track": "القوة" },
+            { "time": "17:30", "title": "فترات الكارديو", "track": "الكارديو" },
+            {
+              "time": "19:00",
+              "title": "المرونة والتوازن",
+              "track": "المرونة"
+            },
+            {
+              "time": "20:00",
+              "title": "لياقة كرة القدم",
+              "track": "كرة القدم"
+            }
+          ]
+        },
+        {
+          "id": "thu",
+          "label": "خ",
+          "name": "الخميس",
+          "sessions": [
+            { "time": "07:00", "title": "القوة والتقنية", "track": "القوة" },
+            { "time": "18:00", "title": "دراجة وطاقة", "track": "الكارديو" },
+            { "time": "19:30", "title": "تدفق مسائي", "track": "المرونة" },
+            {
+              "time": "20:30",
+              "title": "مهارات كرة القدم",
+              "track": "كرة القدم"
+            }
+          ]
+        },
+        {
+          "id": "fri",
+          "label": "ج",
+          "name": "الجمعة",
+          "sessions": [
+            { "time": "08:00", "title": "قوة نهاية الأسبوع", "track": "القوة" },
+            {
+              "time": "16:30",
+              "title": "كارديو بكامل الطاقة",
+              "track": "الكارديو"
+            },
+            { "time": "18:00", "title": "استعادة النشاط", "track": "المرونة" },
+            {
+              "time": "19:00",
+              "title": "أكاديمية كرة القدم",
+              "track": "كرة القدم"
+            }
+          ]
         }
       ]
     },
@@ -222,6 +386,17 @@
             "مجموعات صغيرة ومركزة"
           ],
           "packagesDescription": "باقات الحركة والاستشفاء"
+        },
+        "football": {
+          "name": "أداء كرة القدم",
+          "eyebrow": "تعلّم. تطوّر. انتمِ.",
+          "description": "يتدرب اللاعبون من عمر 19 إلى 21 عامًا لبناء الثقة والمهارة. طوّر المهارات الفنية وفهم اللعب والقوة واللياقة للمباريات ضمن تدريب منظم وفريق داعم.",
+          "highlights": [
+            "المهارات الفنية والتحكم بالكرة",
+            "القوة والسرعة واللياقة للمباريات",
+            "اللعب الجماعي والوعي التكتيكي"
+          ],
+          "packagesDescription": "باقات أداء كرة القدم"
         }
       },
       "packagePrices": {
@@ -266,6 +441,20 @@
             "unit": "8 حصص",
             "description": "ثماني حصص تدفق وإطالة واستشفاء."
           }
+        ],
+        "football": [
+          {
+            "name": "حصة كرة قدم فردية",
+            "price": "100",
+            "unit": "الحصة",
+            "description": "حصة تدريب كرة قدم بإشراف مدرب للفئة العمرية 19–21."
+          },
+          {
+            "name": "باقة كرة القدم 8 حصص",
+            "price": "720",
+            "unit": "8 حصص",
+            "description": "ثماني حصص لتطوير المهارات واللياقة والثقة."
+          }
         ]
       },
       "packageCards": {
@@ -289,7 +478,7 @@
       "period": "شهر",
       "features": "المزايا",
       "getStarted": "ابدأ الآن",
-      "popular": "الأكثر طلبًا",
+      "popular": "ينصح به",
       "plans": [
         {
           "name": "أساسي",
@@ -329,6 +518,36 @@
         }
       ]
     }
+  },
+  "authPage": {
+    "signInEyebrow": "مرحبًا بعودتك",
+    "signInTitle": "تسجيل الدخول",
+    "signInDescription": "سجّل الدخول لمتابعة رحلتك التدريبية مع Leader Academy.",
+    "signUpEyebrow": "ابدأ رحلتك",
+    "signUpTitle": "أنشئ حسابك",
+    "signUpDescription": "انضم إلى Leader Academy واتخذ الخطوة التالية نحو أهدافك.",
+    "name": "الاسم الكامل",
+    "namePlaceholder": "اكتب اسمك الكامل",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "you@example.com",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور",
+    "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+    "passwordHint": "استخدم 8 أحرف على الأقل.",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "signIn": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب",
+    "needHelp": "هل تحتاج إلى مساعدة؟",
+    "contactUs": "تواصل معنا",
+    "haveAccount": "لديك حساب بالفعل؟",
+    "noAccount": "جديد في Leader Academy؟",
+    "notConnected": "لم يتم ربط خدمة تسجيل الدخول بعد. لم يتم إرسال معلوماتك.",
+    "brandEyebrow": "LEADER ACADEMY",
+    "brandTitle": "تدرّب بهدف. وتطوّر بثقة.",
+    "brandDescription": "تدريب احترافي ومجتمع داعم وخطة تدريبية مصممة خصيصًا لك."
   },
   "foundation": {
     "title": "الأساس جاهز",
@@ -383,6 +602,11 @@
       "name": "المرونة والاستشفاء",
       "text": "تحرك بشكل أفضل واستعد باستمرار للحفاظ على جاهزية جسمك."
     },
+    "football": {
+      "name": "أداء كرة القدم",
+      "text": "طوّر مهارات كرة القدم ولياقة اللعب والثقة ضمن فريق داعم.",
+      "viewProgram": "استكشف برنامج كرة القدم"
+    },
     "viewSchedule": "عرض الجدول"
   },
   "timetablePage": {
@@ -391,10 +615,13 @@
     "duration": "60 دقيقة · جميع المستويات",
     "daysLabel": "اختر اليوم",
     "today": "اليوم",
+    "previousWeek": "الأسبوع السابق",
+    "nextWeek": "الأسبوع التالي",
     "classes": {
       "strength": "قوة",
       "mobility": "مرونة وحركة",
-      "cardio": "كارديو"
+      "cardio": "كارديو",
+      "football": "أداء كرة القدم"
     }
   },
   "contactPage": {

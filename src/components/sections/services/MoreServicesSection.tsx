@@ -2,25 +2,28 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { SERVICE_IDS, type ServiceId } from "@/content/serviceIds";
 
 const shell = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12";
-const ids = ["strength", "cardio", "mobility"] as const;
-const images = {
-  strength: "/images/home-page/our-paths/our-paths1.png",
-  cardio: "/images/home-page/our-paths/our-paths2.jpg",
-  mobility: "/images/home-page/our-paths/our-paths3.png",
+const images: Record<ServiceId, string> = {
+  strength: "/images/home-page/our-paths/our-paths1.webp",
+  cardio: "/images/home-page/our-paths/our-paths2.webp",
+  mobility: "/images/home-page/our-paths/our-paths3.webp",
+  football: "/images/home-page/our-paths/our-paths4.webp",
 };
 
-export async function MoreServicesSection({ service }: { service: string }) {
-  const selected = ids.includes(service as (typeof ids)[number])
-    ? service
-    : "strength";
+export async function MoreServicesSection({
+  service,
+}: {
+  service: ServiceId;
+}) {
+  const selected = service;
   const root = await getTranslations("home.servicesPage");
   const services = root.raw("services") as Record<
-    (typeof ids)[number],
+    ServiceId,
     { name: string; eyebrow: string }
   >;
-  const others = ids.filter((id) => id !== selected);
+  const others = SERVICE_IDS.filter((id) => id !== selected);
 
   return (
     <section className="border-b border-border bg-background py-16 sm:py-20 lg:py-24">
@@ -28,7 +31,7 @@ export async function MoreServicesSection({ service }: { service: string }) {
         <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-extrabold uppercase tracking-[-0.04em] rtl:tracking-normal">
           {root("moreTitle")}
         </h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:mt-12">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3 lg:mt-12">
           {others.map((id) => {
             const item = services[id];
             return (

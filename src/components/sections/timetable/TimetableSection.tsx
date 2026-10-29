@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useLocale, useTranslations } from "next-intl";
@@ -14,6 +20,31 @@ import { createFormatters } from "./TimeTableFormat";
 
 gsap.registerPlugin(useGSAP);
 
+function getSaturdayStart(date: Date) {
+  const start = new Date(date);
+  start.setHours(0, 0, 0, 0);
+  start.setDate(start.getDate() - ((start.getDay() + 1) % 7));
+  return start;
+}
+
+function addDays(date: Date, days: number) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+function subscribeToDateChanges() {
+  return () => {};
+}
+
+function getLocalDateKey() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const date = String(now.getDate()).padStart(2, "0");
+  return `${year}-${month}-${date}`;
+}
+
 export function TimetableSection() {
   const t = useTranslations("timetablePage");
   const locale = useLocale();
@@ -21,19 +52,24 @@ export function TimetableSection() {
   const format = useMemo(() => createFormatters(locale), [locale]);
 
   const [dayId, setDayId] = useState(timetable[0].id);
-  const [todayId, setTodayId] = useState<string | null>(null);
+  const [weekOffset, setWeekOffset] = useState(0);
+  const currentDateKey = useSyncExternalStore(
+    subscribeToDateChanges,
+    getLocalDateKey,
+    () => "",
+  );
+  const currentDate = currentDateKey
+    ? new Date(`${currentDateKey}T00:00:00`)
+    : null;
+  const weekStart = currentDate ? getSaturdayStart(currentDate) : null;
+  const todayId = currentDate
+    ? (timetable.find((item) => item.weekday === currentDate.getDay())?.id ??
+      null)
+    : null;
 
   const rootRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const previousIndex = useRef(0);
-
-  // Open on today's schedule when today has classes (decided after mount to avoid a hydration mismatch).
-  useEffect(() => {
-    const today = timetable.find((day) => day.weekday === new Date().getDay());
-    if (!today) return;
-    // setTodayId(today.id);
-    // setDayId(today.id);
-  }, []);
 
   // Page entrance.
   useGSAP(
@@ -94,10 +130,20 @@ export function TimetableSection() {
   );
 
   const day = timetable.find((item) => item.id === dayId) ?? timetable[0];
-  const tabs = timetable.map((item) => ({
+  const currentWeekStart = weekStart
+    ? addDays(weekStart, weekOffset * 7)
+    : null;
+  const dayIndex = timetable.findIndex((item) => item.id === day.id);
+  const selectedDate = currentWeekStart
+    ? addDays(currentWeekStart, dayIndex)
+    : null;
+  const weekEnd = currentWeekStart ? addDays(currentWeekStart, 6) : null;
+  const tabs = timetable.map((item, index) => ({
     id: item.id,
-    label: format.weekdayShort(item.weekday),
-    isToday: item.id === todayId,
+    label: currentWeekStart
+      ? `${format.weekdayShort(item.weekday)} ${format.date(addDays(currentWeekStart, index))}`
+      : format.weekdayShort(item.weekday),
+    isToday: weekOffset === 0 && item.id === todayId,
   }));
 
   return (
@@ -111,6 +157,45 @@ export function TimetableSection() {
             <h1 className="text-section-heading font-extrabold uppercase rtl:leading-[1.3] rtl:normal-case">
               {t("title")}
             </h1>
+          </div>
+
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <p
+              className="text-sm font-semibold text-foreground/70"
+              aria-live="polite"
+            >
+              {currentWeekStart && weekEnd
+                ? format.dateRange(currentWeekStart, weekEnd)
+                : null}
+            </p>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label={t("previousWeek")}
+                disabled={!weekStart}
+                onClick={() => setWeekOffset((offset) => offset - 1)}
+                className="glass-panel inline-flex size-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-foreground/10 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {flip === 1 ? (
+                  <ChevronLeft className="size-5" aria-hidden="true" />
+                ) : (
+                  <ChevronRight className="size-5" aria-hidden="true" />
+                )}
+              </button>
+              <button
+                type="button"
+                aria-label={t("nextWeek")}
+                disabled={!weekStart}
+                onClick={() => setWeekOffset((offset) => offset + 1)}
+                className="glass-panel inline-flex size-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-foreground/10 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {flip === 1 ? (
+                  <ChevronRight className="size-5" aria-hidden="true" />
+                ) : (
+                  <ChevronLeft className="size-5" aria-hidden="true" />
+                )}
+              </button>
+            </div>
           </div>
 
           <div className="timetable-tabs">
@@ -132,10 +217,12 @@ export function TimetableSection() {
             className="mt-8 rounded-3xl outline-offset-8"
           >
             <h2 className="timetable-day mb-5 text-sm font-extrabold uppercase tracking-[0.18em] text-accent rtl:text-base rtl:tracking-normal rtl:normal-case">
-              {format.weekdayLong(day.weekday)}
+              {selectedDate
+                ? format.selectedDate(selectedDate)
+                : format.weekdayLong(day.weekday)}
             </h2>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {day.sessions.map((session, index) => (
                 <ClassCard
                   key={`${day.id}-${session.time}`}
@@ -145,6 +232,14 @@ export function TimetableSection() {
                   timeLabel={format.time(session.time)}
                   name={t(`classes.${session.type}`)}
                   duration={t("duration")}
+                  detailsHref={
+                    session.type === "football" ? "/services/football" : undefined
+                  }
+                  detailsLabel={
+                    session.type === "football"
+                      ? t("classes.viewFootballProgram")
+                      : undefined
+                  }
                 />
               ))}
             </div>

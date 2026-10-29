@@ -25,7 +25,34 @@
     "quickLinks": "Quick links",
     "contact": "Contact",
     "contactCta": "Get in touch",
-    "copyright": "© 2026 Leader Academy. All rights reserved."
+    "copyright": "© 2026 Anan Sustainability. All rights reserved.",
+    "explore": "Explore",
+    "meetTheTeam": "Meet the Team",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "legal": "Legal",
+    "contactInfo": "Contact Information",
+    "address": "Startup Hub, Diriyah, Riyadh, Saudi Arabia",
+    "needHelp": "Need any help?",
+    "followUs": "Follow Leader Academy on social media",
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "tiktok": "TikTok"
+    },
+    "newsletterTitle": "Sign up for our newsletter",
+    "newsletterDescription": "Get class updates, offers, and gym news in your inbox.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter Email Address",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing…",
+    "consent": "I agree to receive updates and accept the <privacy>Privacy Policy</privacy>.",
+    "subscribeSuccess": "You're subscribed. Check your inbox to confirm.",
+    "errorInvalidEmail": "Enter a valid email address.",
+    "errorConsent": "Please accept to continue.",
+    "errorFailed": "We couldn't complete your subscription. Please try again.",
+    "paymentMethods": "Accepted payment methods"
   },
   "home": {
     "hero": {
@@ -80,7 +107,7 @@
           "title": "10-12",
           "summary": "Build muscle and increase stamina",
           "description": "Progressive strength sessions with coaching cues, form support, and programming that scales with you.",
-          "image": "/images/home-page/our-paths/our-paths1.png",
+          "image": "/images/home-page/our-paths/our-paths1.webp",
           "href": "/services/strength"
         },
         {
@@ -88,7 +115,7 @@
           "title": "13-15",
           "summary": "Heart health and weight loss",
           "description": "High-energy cardio classes that mix intervals, cycling, and athletic conditioning.",
-          "image": "/images/home-page/our-paths/our-paths2.jpg",
+          "image": "/images/home-page/our-paths/our-paths2.webp",
           "href": "/services/cardio"
         },
         {
@@ -96,8 +123,185 @@
           "title": "16-18",
           "summary": "Clarity, mobility, and recovery",
           "description": "Flow, stretch, and breath work to restore mobility and keep you training consistently.",
-          "image": "/images/home-page/our-paths/our-paths3.png",
+          "image": "/images/home-page/our-paths/our-paths3.webp",
           "href": "/services/mobility"
+        },
+        {
+          "eyebrow": "ADVANCED",
+          "title": "19-21",
+          "summary": "Build confidence through football",
+          "description": "Develop technical ability, strength, and match-ready fitness with focused coaching and a supportive team.",
+          "image": "/images/home-page/our-paths/our-paths4.webp",
+          "href": "/services/football"
+        }
+      ]
+    },
+    "weeklyClasses": {
+      "eyebrow": "TRAIN ON YOUR TERMS",
+      "title": "A WEEK BUILT FOR YOUR GOALS",
+      "description": "Make room for progress. Explore a full week of coached strength, cardio, mobility, and football classes, then choose the sessions that fit your routine.",
+      "boardEyebrow": "WEEKLY CLASS SCHEDULE",
+      "chooseDay": "Choose a day to see its classes",
+      "boardNote": "A snapshot of this week's schedule.",
+      "viewSchedule": "View full timetable",
+      "stats": [
+        { "value": "30+", "label": "classes every week" },
+        { "value": "7", "label": "days to train" },
+        { "value": "4", "label": "ways to progress" }
+      ],
+      "days": [
+        {
+          "id": "sat",
+          "label": "SAT",
+          "name": "Saturday",
+          "sessions": [
+            {
+              "time": "06:00",
+              "title": "Strength Foundations",
+              "track": "Strength"
+            },
+            {
+              "time": "17:30",
+              "title": "Cardio Conditioning",
+              "track": "Cardio"
+            },
+            { "time": "19:00", "title": "Mobility Flow", "track": "Mobility" },
+            { "time": "20:00", "title": "Football Skills", "track": "Football" }
+          ]
+        },
+        {
+          "id": "sun",
+          "label": "SUN",
+          "name": "Sunday",
+          "sessions": [
+            {
+              "time": "07:00",
+              "title": "Functional Strength",
+              "track": "Strength"
+            },
+            { "time": "18:00", "title": "HIIT Cycling", "track": "Cardio" },
+            {
+              "time": "19:30",
+              "title": "Recovery Stretch",
+              "track": "Mobility"
+            },
+            {
+              "time": "20:30",
+              "title": "Football Performance",
+              "track": "Football"
+            }
+          ]
+        },
+        {
+          "id": "mon",
+          "label": "MON",
+          "name": "Monday",
+          "sessions": [
+            {
+              "time": "06:30",
+              "title": "Progressive Strength",
+              "track": "Strength"
+            },
+            {
+              "time": "17:30",
+              "title": "Athletic Intervals",
+              "track": "Cardio"
+            },
+            {
+              "time": "19:00",
+              "title": "Guided Mobility",
+              "track": "Mobility"
+            },
+            {
+              "time": "20:00",
+              "title": "Football Development",
+              "track": "Football"
+            }
+          ]
+        },
+        {
+          "id": "tue",
+          "label": "TUE",
+          "name": "Tuesday",
+          "sessions": [
+            { "time": "07:00", "title": "Power Circuit", "track": "Strength" },
+            { "time": "18:00", "title": "Endurance Ride", "track": "Cardio" },
+            {
+              "time": "19:30",
+              "title": "Stretch & Restore",
+              "track": "Mobility"
+            },
+            {
+              "time": "20:30",
+              "title": "Football Tactics",
+              "track": "Football"
+            }
+          ]
+        },
+        {
+          "id": "wed",
+          "label": "WED",
+          "name": "Wednesday",
+          "sessions": [
+            {
+              "time": "06:00",
+              "title": "Total Body Strength",
+              "track": "Strength"
+            },
+            { "time": "17:30", "title": "Cardio Intervals", "track": "Cardio" },
+            {
+              "time": "19:00",
+              "title": "Mobility & Balance",
+              "track": "Mobility"
+            },
+            {
+              "time": "20:00",
+              "title": "Football Conditioning",
+              "track": "Football"
+            }
+          ]
+        },
+        {
+          "id": "thu",
+          "label": "THU",
+          "name": "Thursday",
+          "sessions": [
+            {
+              "time": "07:00",
+              "title": "Strength & Form",
+              "track": "Strength"
+            },
+            { "time": "18:00", "title": "Cycle & Sweat", "track": "Cardio" },
+            { "time": "19:30", "title": "Evening Flow", "track": "Mobility" },
+            { "time": "20:30", "title": "Football Skills", "track": "Football" }
+          ]
+        },
+        {
+          "id": "fri",
+          "label": "FRI",
+          "name": "Friday",
+          "sessions": [
+            {
+              "time": "08:00",
+              "title": "Weekend Strength",
+              "track": "Strength"
+            },
+            {
+              "time": "16:30",
+              "title": "Full Energy Cardio",
+              "track": "Cardio"
+            },
+            {
+              "time": "18:00",
+              "title": "Reset & Recover",
+              "track": "Mobility"
+            },
+            {
+              "time": "19:00",
+              "title": "Football Academy",
+              "track": "Football"
+            }
+          ]
         }
       ]
     },
@@ -222,6 +426,17 @@
             "Small, focused groups"
           ],
           "packagesDescription": "Packages for Mobility & Recovery"
+        },
+        "football": {
+          "name": "Football Performance",
+          "eyebrow": "LEARN. IMPROVE. BELONG.",
+          "description": "Ages 19–21 train together to build confident, capable footballers. Develop technical skills, game awareness, strength, and match fitness through structured coaching and a supportive team environment.",
+          "highlights": [
+            "Technical skills and ball control",
+            "Strength, speed, and match conditioning",
+            "Team play and tactical awareness"
+          ],
+          "packagesDescription": "Packages for Football Performance"
         }
       },
       "packagePrices": {
@@ -266,6 +481,20 @@
             "unit": "8 sessions",
             "description": "Eight flow, stretch, and recovery sessions."
           }
+        ],
+        "football": [
+          {
+            "name": "Football Drop-in",
+            "price": "100",
+            "unit": "session",
+            "description": "One coached football training session for ages 19–21."
+          },
+          {
+            "name": "Football 8-pack",
+            "price": "720",
+            "unit": "8 sessions",
+            "description": "Eight sessions to develop skills, fitness, and confidence."
+          }
         ]
       },
       "packageCards": {
@@ -289,7 +518,7 @@
       "period": "month",
       "features": "Features",
       "getStarted": "Get Started",
-      "popular": "Most Popular",
+      "popular": "Recommended",
       "plans": [
         {
           "name": "Basic",
@@ -329,6 +558,36 @@
         }
       ]
     }
+  },
+  "authPage": {
+    "signInEyebrow": "WELCOME BACK",
+    "signInTitle": "SIGN IN",
+    "signInDescription": "Sign in to continue your training journey with Leader Academy.",
+    "signUpEyebrow": "START YOUR JOURNEY",
+    "signUpTitle": "CREATE YOUR ACCOUNT",
+    "signUpDescription": "Join Leader Academy and take the next step toward your goals.",
+    "name": "Full name",
+    "namePlaceholder": "Your full name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Enter your password again",
+    "passwordMismatch": "Passwords do not match.",
+    "passwordHint": "Use at least 8 characters.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signIn": "Sign in",
+    "createAccount": "Create account",
+    "needHelp": "Need help?",
+    "contactUs": "Contact us",
+    "haveAccount": "Already have an account?",
+    "noAccount": "New to Leader Academy?",
+    "notConnected": "Authentication isn't connected yet. Your information has not been sent.",
+    "brandEyebrow": "LEADER ACADEMY",
+    "brandTitle": "TRAIN WITH PURPOSE. GROW WITH CONFIDENCE.",
+    "brandDescription": "Expert coaching, supportive community, and a training plan built around you."
   },
   "foundation": {
     "title": "Foundation ready",
@@ -383,6 +642,11 @@
       "name": "Mobility & Recovery",
       "text": "Move better, recover consistently, and keep your body training-ready."
     },
+    "football": {
+      "name": "Football Performance",
+      "text": "Build football skills, game fitness, and confidence in a supportive team.",
+      "viewProgram": "Explore football program"
+    },
     "viewSchedule": "View schedule"
   },
   "timetablePage": {
@@ -391,10 +655,13 @@
     "duration": "60 min · All levels",
     "daysLabel": "Select a day",
     "today": "Today",
+    "previousWeek": "Previous week",
+    "nextWeek": "Next week",
     "classes": {
       "strength": "Strength",
       "mobility": "Mobility",
-      "cardio": "Cardio"
+      "cardio": "Cardio",
+      "football": "Football Performance"
     }
   },
   "contactPage": {

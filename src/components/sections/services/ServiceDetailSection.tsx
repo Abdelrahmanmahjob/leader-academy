@@ -2,19 +2,22 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/Button";
+import type { ServiceId } from "@/content/serviceIds";
 
 const shell = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 pt-15";
-const ids = ["strength", "cardio", "mobility"] as const;
-const images = {
-  strength: "/images/home-page/our-paths/our-paths1.png",
-  cardio: "/images/home-page/our-paths/our-paths2.jpg",
-  mobility: "/images/home-page/our-paths/our-paths3.png",
+const images: Record<ServiceId, string> = {
+  strength: "/images/home-page/our-paths/our-paths1.webp",
+  cardio: "/images/home-page/our-paths/our-paths2.webp",
+  mobility: "/images/home-page/our-paths/our-paths3.webp",
+  football: "/images/home-page/our-paths/our-paths4.webp",
 };
 
-export async function ServiceDetailSection({ service }: { service: string }) {
-  const selected = ids.includes(service as (typeof ids)[number])
-    ? service
-    : "strength";
+export async function ServiceDetailSection({
+  service,
+}: {
+  service: ServiceId;
+}) {
+  const selected = service;
   const t = await getTranslations("home.servicesPage.services");
   const root = await getTranslations("home.servicesPage");
   const serviceT = (key: string) => t(`${selected}.${key}`);
@@ -30,7 +33,7 @@ export async function ServiceDetailSection({ service }: { service: string }) {
       >
         <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-border sm:min-h-[520px]">
           <Image
-            src={images[selected as keyof typeof images]}
+            src={images[selected]}
             alt={serviceT("name")}
             fill
             sizes="(max-width: 1024px) 100vw, 46vw"

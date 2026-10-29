@@ -2,15 +2,19 @@ import { getTranslations } from "next-intl/server";
 import { Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
+import type { ServiceId } from "@/content/serviceIds";
 
 const shell = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12";
-const ids = ["strength", "cardio", "mobility"] as const;
 
-export async function ServicePackagesSection({ service }: { service: string }) {
-  const selected = ids.includes(service as (typeof ids)[number]) ? service : "strength";
+export async function ServicePackagesSection({
+  service,
+}: {
+  service: ServiceId;
+}) {
+  const selected = service;
   const root = await getTranslations("home.servicesPage");
   const serviceRoot = await getTranslations(`home.servicesPage.services.${selected}`);
-  const packagePrices = root.raw("packagePrices") as Record<string, Array<{ name: string; price: string; unit: string; description: string }>>;
+  const packagePrices = root.raw("packagePrices") as Record<ServiceId, Array<{ name: string; price: string; unit: string; description: string }>>;
   const packages = packagePrices[selected];
 
   return (

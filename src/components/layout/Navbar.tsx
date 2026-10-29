@@ -81,7 +81,7 @@ export function Navbar() {
 
             <div className="hidden items-center gap-2.5 lg:flex">
               <LanguageSwitcher />
-              <Link href={authLinks.login} className={loginClass}>
+              <Link href={authLinks.signin} className={loginClass}>
                 {t("login")}
               </Link>
               <Link href={authLinks.signUp} className={ctaClass}>

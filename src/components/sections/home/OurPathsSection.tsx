@@ -30,17 +30,16 @@ const GROW = 2.36;
 const GAP_REM = 1.25; // gap-5
 const PAD_REM = 1; // p-4
 
-// Portrait width = collapsed card width minus its padding, so the image never resizes while cards grow.
-const rowStyle = {
-  "--img": `calc((100cqw - ${GAP_REM * 2}rem) / ${GROW + 2} - ${PAD_REM * 2}rem)`,
-} as CSSProperties;
-
 export function OurPathsSection({
   titleOverride,
 }: { titleOverride?: string } = {}) {
   const t = useTranslations("home.paths");
   const cards = t.raw("cards") as PathCard[];
   const { flip } = useDirection();
+  // Keep the portrait width aligned with each card's collapsed share of the row.
+  const rowStyle = {
+    "--img": `calc((100cqw - ${GAP_REM * (cards.length - 1)}rem) / ${GROW + cards.length - 1} - ${PAD_REM * 2}rem)`,
+  } as CSSProperties;
 
   const [active, setActive] = useState(DEFAULT_ACTIVE);
   const [desktop, setDesktop] = useState(false);

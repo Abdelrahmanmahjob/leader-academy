@@ -10,7 +10,7 @@ import { gsap, useGSAP } from "./GsapSetup";
 import {
   submitContactForm,
   type ContactFormData,
-} from "@/app/api/contact/route";
+} from "@/lib/contact";
 import { FormField, inputClass } from "./FormField";
 
 type Status = "idle" | "submitting" | "success" | "error";

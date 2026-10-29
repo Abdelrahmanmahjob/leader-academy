@@ -289,7 +289,7 @@ export function MobileNavigation() {
                 <LanguageSwitcher />
                 <div className="flex min-w-0 flex-1 gap-3">
                   <Link
-                    href={authLinks.login}
+                    href={authLinks.signin}
                     className={`${loginClass} flex-1`}
                     onClick={() => closeMenu(false)}
                   >

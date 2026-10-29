@@ -58,7 +58,7 @@ export const mobileLinks = [
 ] as const;
 
 /** Adjust these two paths to your real auth routes. */
-export const authLinks = { login: "/login", signUp: "/sign-up" } as const;
+export const authLinks = { signin: "/sign-in", signUp: "/sign-up" } as const;
 
 export function isActivePath(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";

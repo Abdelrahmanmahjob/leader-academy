@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 import { ServiceDetailSection } from "@/components/sections/services/ServiceDetailSection";
 import { ServicePackagesSection } from "@/components/sections/services/ServicePackagesSection";
 import { MoreServicesSection } from "@/components/sections/services/MoreServicesSection";
-
-const serviceIds = ["strength", "cardio", "mobility"] as const;
+import { isServiceId, SERVICE_IDS } from "@/content/serviceIds";
 
 export function generateStaticParams() {
-  return serviceIds.map((service) => ({ service }));
+  return SERVICE_IDS.map((service) => ({ service }));
 }
 
 export async function generateMetadata({
@@ -16,14 +15,17 @@ export async function generateMetadata({
   params: Promise<{ service: string }>;
 }): Promise<Metadata> {
   const { service } = await params;
-  if (!serviceIds.includes(service as (typeof serviceIds)[number])) return {};
+  if (!isServiceId(service)) return {};
+
+  const titles = {
+    strength: "Strength & Fitness",
+    cardio: "Cardio & Heart Health",
+    mobility: "Mobility & Recovery",
+    football: "Football Performance",
+  } satisfies Record<(typeof SERVICE_IDS)[number], string>;
+
   return {
-    title:
-      service === "strength"
-        ? "Strength & Fitness"
-        : service === "cardio"
-          ? "Cardio & Heart Health"
-          : "Mobility & Recovery",
+    title: titles[service],
   };
 }
 
@@ -33,7 +35,7 @@ export default async function ServiceDetailPage({
   params: Promise<{ service: string }>;
 }) {
   const { service } = await params;
-  if (!serviceIds.includes(service as (typeof serviceIds)[number])) notFound();
+  if (!isServiceId(service)) notFound();
 
   return (
     <main id="main-content">
