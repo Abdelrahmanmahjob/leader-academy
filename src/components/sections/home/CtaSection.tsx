@@ -17,34 +17,48 @@ export function CtaSection() {
   const imageRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("home.cta");
 
-  useGSAP(() => {
-    gsap.fromTo(
-      ".cta-content",
-      { autoAlpha: 0, y: 36 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 78%", once: true },
-      },
-    );
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".cta-content",
+        { autoAlpha: 0, y: 36 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 78%",
+            once: true,
+          },
+        },
+      );
 
-    gsap.fromTo(
-      imageRef.current,
-      { scale: 1.12 },
-      {
-        scale: 1,
-        duration: 1.8,
-        ease: "power2.out",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 90%", once: true },
-      },
-    );
-  }, { scope: sectionRef });
+      gsap.fromTo(
+        imageRef.current,
+        { scale: 1.12 },
+        {
+          scale: 1,
+          duration: 1.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 90%",
+            once: true,
+          },
+        },
+      );
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section ref={sectionRef} className="border-b border-border bg-background py-4 sm:py-6">
+    <section
+      ref={sectionRef}
+      className="border-b border-border bg-background py-4 sm:py-6"
+    >
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="relative isolate flex min-h-[430px] items-end overflow-hidden rounded-[32px] border border-border sm:min-h-[500px] lg:min-h-[560px]">
           <div ref={imageRef} className="absolute inset-0 -z-20">
@@ -57,13 +71,16 @@ export function CtaSection() {
               className="object-cover object-center"
             />
           </div>
-          <div className="absolute inset-0 -z-10 bg-linear-to-t from-background via-background/75 to-background/10 rtl:bg-linear-to-t" aria-hidden="true" />
+          <div
+            className="absolute inset-0 -z-10 bg-linear-to-t from-background via-background/75 to-background/10 rtl:bg-linear-to-t"
+            aria-hidden="true"
+          />
           <div className="w-full p-6 sm:p-10 lg:p-14">
             <div className="max-w-3xl">
               <p className="cta-content mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-accent rtl:tracking-normal rtl:normal-case">
                 Leader Academy
               </p>
-              <h2 className="cta-content text-[clamp(2.25rem,5vw,4rem)] font-extrabold uppercase leading-[1.02] tracking-[-0.04em] text-foreground rtl:leading-[1.25] rtl:tracking-normal">
+              <h2 className="cta-content text-[clamp(1.5rem,5vw,3rem)] font-extrabold uppercase leading-[1.02] tracking-[-0.04em] text-foreground rtl:leading-[1.25] rtl:tracking-normal">
                 {t("title")}
               </h2>
               <div className="cta-content mt-6 flex flex-wrap items-center gap-4">

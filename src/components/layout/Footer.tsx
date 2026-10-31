@@ -4,7 +4,6 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { AmbientGlow } from "@/components/ui/AmbientGlow";
 import { Link } from "@/i18n/navigation";
-import { BrandLogo } from "./BrandLogo";
 import { FooterReveal } from "../ui/FooterReveal";
 import { NewsletterForm } from "../ui/NewsLetterForm";
 import { SocialIcon } from "../ui/SocialIcons";

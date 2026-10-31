@@ -183,7 +183,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate flex top-0 min-h-[680px] flex-col overflow-hidden border-b border-border bg-background sm:min-h-[760px]"
+      className="relative isolate flex top-0 min-h-[800px] flex-col overflow-hidden border-b border-border bg-background sm:min-h-[760px]"
       aria-roledescription="carousel"
       aria-label={t("label")}
       onPointerEnter={(event) =>
