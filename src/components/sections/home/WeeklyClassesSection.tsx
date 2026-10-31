@@ -81,12 +81,12 @@ export function WeeklyClassesSection() {
       .filter(Boolean);
   const lanes: BoardLane[] = [
     {
-      id: "upcoming",
-      title: "Upcoming",
-      subtitle: "Next on the pitch",
-      tone: "blue",
-      icon: Clock3,
-      sessions: rotate(0),
+      id: "completed",
+      title: "Completed",
+      subtitle: "Built on consistency",
+      tone: "accent",
+      icon: Check,
+      sessions: rotate(2),
     },
     {
       id: "training",
@@ -97,12 +97,12 @@ export function WeeklyClassesSection() {
       sessions: rotate(1),
     },
     {
-      id: "completed",
-      title: "Completed",
-      subtitle: "Built on consistency",
-      tone: "accent",
-      icon: Check,
-      sessions: rotate(2),
+      id: "upcoming",
+      title: "Upcoming",
+      subtitle: "Next on the pitch",
+      tone: "blue",
+      icon: Clock3,
+      sessions: rotate(0),
     },
   ];
 

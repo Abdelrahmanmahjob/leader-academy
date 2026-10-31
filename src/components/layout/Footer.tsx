@@ -26,7 +26,6 @@ export async function Footer() {
     { href: "/services", label: nav("services") },
     { href: "/classes", label: nav("classes") },
     { href: "/trainers", label: t("meetTheTeam") },
-    ...LEGAL_LINKS.map((l) => ({ href: l.href, label: t(l.labelKey) })),
   ];
 
   const consent = t.rich("consent", {
@@ -51,16 +50,29 @@ export async function Footer() {
 
       <Container>
         <FooterReveal>
-          <div className="grid gap-x-10 gap-y-12 py-12 md:grid-cols-2 lg:grid-cols-[1.1fr_.9fr_1.1fr_1.8fr] lg:py-16 xl:gap-x-14">
+          <div className="grid gap-x-10 gap-y-12 pt-12 pb-5 md:grid-cols-2 lg:grid-cols-[1.1fr_.9fr_1.1fr_1.8fr] xl:gap-x-14">
             {/* Brand */}
             <div data-reveal="" className="flex flex-col">
-              <BrandLogo />
+              <Link
+                href="/"
+                className="inline-flex min-h-11 shrink-0 items-center gap-3 overflow-hidden"
+                aria-label={t("homeLabel")}
+              >
+                <Image
+                  src="/brand/logo.webp"
+                  alt=""
+                  width={120}
+                  height={120}
+                  className=" rounded-xl object-contain"
+                  priority
+                />
+              </Link>
               <p className="mt-6 max-w-xs text-base leading-8 text-muted">
                 {t("brandDescription")}
               </p>
               <ul
                 aria-label={t("followUs")}
-                className="mt-10 flex gap-3 lg:mt-auto lg:pt-10"
+                className="mt-5 flex gap-3  lg:pt-5"
               >
                 {SOCIALS.map(({ id, href }) => (
                   <li key={id}>
@@ -83,7 +95,7 @@ export async function Footer() {
               <h2 id="footer-explore" className={heading}>
                 {t("explore")}
               </h2>
-              <ul className="mt-6 space-y-1">
+              <ul className="mt-3 space-y-1">
                 {exploreLinks.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className={navLink}>
@@ -97,7 +109,7 @@ export async function Footer() {
             {/* Contact */}
             <div data-reveal="">
               <h2 className={heading}>{t("contactInfo")}</h2>
-              <address className="mt-6 space-y-5 not-italic">
+              <address className="mt-3 space-y-5 not-italic">
                 <p className="text-base leading-8 text-muted">{t("address")}</p>
                 <p className="text-base text-muted">{t("needHelp")}</p>
                 <div className="space-y-2">
@@ -129,7 +141,7 @@ export async function Footer() {
               <h2 id="footer-newsletter" className={heading}>
                 {t("newsletterTitle")}
               </h2>
-              <p className="mb-6 mt-6 text-base leading-8 text-muted">
+              <p className="mb-3 mt-3 text-base leading-8 text-muted">
                 {t("newsletterDescription")}
               </p>
               <NewsletterForm
@@ -152,7 +164,7 @@ export async function Footer() {
           {/* Bottom bar */}
           <div
             data-reveal=""
-            className="flex flex-col gap-6 border-t border-border py-8 lg:flex-row lg:items-end lg:justify-between"
+            className="flex flex-col gap-6 border-t border-border py-5 lg:flex-row lg:items-start lg:justify-between"
           >
             <div className="space-y-1">
               <p className="text-sm text-muted">{t("copyright")}</p>
@@ -168,7 +180,7 @@ export async function Footer() {
                       <li>
                         <Link
                           href={link.href}
-                          className="inline-flex min-h-11 items-center text-foreground transition-colors hover:text-accent"
+                          className="inline-flex min-h-11 items-center text-accent transition-colors "
                         >
                           {t(link.labelKey)}
                         </Link>
@@ -186,14 +198,14 @@ export async function Footer() {
               {PAYMENTS.map((payment) => (
                 <li
                   key={payment.name}
-                  className="relative h-11 w-[4.5rem] overflow-hidden rounded-md bg-foreground"
+                  className="relative h-8 w-[4rem] overflow-hidden rounded-md bg-foreground"
                 >
                   <Image
                     src={payment.src}
                     alt={payment.name}
                     fill
-                    sizes="72px"
-                    className="object-contain p-2"
+                    sizes="82px"
+                    className="object-contain p-1"
                   />
                 </li>
               ))}

@@ -146,8 +146,8 @@
       "viewSchedule": "View full timetable",
       "stats": [
         { "value": "30+", "label": "classes every week" },
-        { "value": "7", "label": "days to train" },
-        { "value": "4", "label": "ways to progress" }
+        { "value": "12+", "label": "hours of training" },
+        { "value": "15+", "label": "days to train" }
       ],
       "days": [
         {

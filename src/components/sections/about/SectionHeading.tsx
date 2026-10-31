@@ -14,7 +14,7 @@ interface SectionHeadingProps {
 }
 
 const sizes = {
-  hero: "text-[clamp(2.5rem,6vw,5rem)] leading-[.98] tracking-[-0.05em] rtl:leading-[1.2]",
+  hero: "text-[clamp(2.5rem,6vw,3.5rem)] leading-[.98] tracking-[-0.05em] rtl:leading-[1.2]",
   section:
     "text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] tracking-[-0.04em] rtl:leading-[1.3]",
 } as const;
