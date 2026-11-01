@@ -7,21 +7,41 @@ import { TrainerCard } from "./TrainerCard";
 
 export function TrainersSection() {
   const t = useTranslations("trainersPage");
+  const detailLabels = {
+    experience: t("experienceLabel"),
+    qualification: t("qualificationLabel"),
+    specialization: t("specializationLabel"),
+  };
   const trainers = [
     {
       image: "/images/trainer-page/coach1.jpeg",
       name: t("coach1.title"),
       role: t("coach1.subtitle"),
+      details: [
+        { label: detailLabels.experience, value: t("coach1.experience") },
+        { label: detailLabels.qualification, value: t("coach1.qualification") },
+        { label: detailLabels.specialization, value: t("coach1.subtitle") },
+      ],
     },
     {
       image: "/images/trainer-page/coach2.jpg",
       name: t("coach2.title"),
       role: t("coach2.subtitle"),
+      details: [
+        { label: detailLabels.experience, value: t("coach2.experience") },
+        { label: detailLabels.qualification, value: t("coach2.qualification") },
+        { label: detailLabels.specialization, value: t("coach2.subtitle") },
+      ],
     },
     {
       image: "/images/trainer-page/coach3.webp",
       name: t("coach3.title"),
       role: t("coach3.subtitle"),
+      details: [
+        { label: detailLabels.experience, value: t("coach3.experience") },
+        { label: detailLabels.qualification, value: t("coach3.qualification") },
+        { label: detailLabels.specialization, value: t("coach3.subtitle") },
+      ],
     },
   ];
 

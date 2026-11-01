@@ -9,6 +9,7 @@ type TrainerCardProps = {
   image: string;
   name: string;
   role: string;
+  details: { label: string; value: string }[];
   index: number;
   priority?: boolean;
 };
@@ -20,6 +21,7 @@ export function TrainerCard({
   image,
   name,
   role,
+  details,
   index,
   priority = false,
 }: TrainerCardProps) {
@@ -79,7 +81,7 @@ export function TrainerCard({
     <li data-reveal="">
       <div
         ref={stageRef}
-        className="group relative h-full min-h-[430px] overflow-hidden rounded-[24px] border border-border bg-surface transition-[border-color,box-shadow] duration-500 hover:border-accent/40 hover:shadow-[0_32px_64px_-28px_color-mix(in_srgb,var(--la-inverse)_90%,transparent)] sm:min-h-[500px]"
+        className="group relative h-full min-h-[560px] overflow-hidden rounded-[24px] border border-border bg-surface transition-[border-color,box-shadow] duration-500 hover:border-accent/40 hover:shadow-[0_32px_64px_-28px_color-mix(in_srgb,var(--la-inverse)_90%,transparent)] sm:min-h-[590px]"
       >
         {/* Oversized so the parallax shift never exposes an edge */}
         <div data-media className="absolute -inset-[6%] will-change-transform">
@@ -118,6 +120,18 @@ export function TrainerCard({
               {name}
             </h2>
             <p className="mt-1 text-sm text-foreground/70">{role}</p>
+            <dl className="mt-4 space-y-3 border-t border-foreground/10 pt-3">
+              {details.map((detail) => (
+                <div key={detail.label}>
+                  <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-accent rtl:tracking-normal">
+                    {detail.label}
+                  </dt>
+                  <dd className="mt-0.5 text-sm leading-5 text-foreground/80">
+                    {detail.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </GlassCard>
         </div>
       </div>

@@ -604,24 +604,33 @@
   "trainersPage": {
     "eyebrow": "LEADER TEAM",
     "title": "MEET YOUR TRAINERS",
-    "description": "Specialist coaches with the experience to make every session focused and effective.",
+    "description": "Get to know our trainers through their experience, qualifications, and areas of specialization.",
+    "experienceLabel": "Experience",
+    "qualificationLabel": "Qualifications",
+    "specializationLabel": "Specialization",
     "coach1": {
       "name": "Omar Al Harbi",
       "role": "Strength & Conditioning",
       "title": "Strength Coach",
-      "subtitle": "Performance & Strength"
+      "subtitle": "Performance & Strength",
+      "experience": "8+ years of coaching",
+      "qualification": "Certified Strength & Conditioning Specialist"
     },
     "coach2": {
       "name": "Sara Al Faisal",
       "role": "Cardio & Performance",
       "title": "Cardio Coach",
-      "subtitle": "Endurance & Conditioning"
+      "subtitle": "Endurance & Conditioning",
+      "experience": "6+ years of coaching",
+      "qualification": "Certified Personal Trainer & Group Fitness Instructor"
     },
     "coach3": {
       "name": "Nora Khalid",
       "role": "Mobility & Recovery",
       "title": "Mobility Coach",
-      "subtitle": "Recovery & Movement"
+      "subtitle": "Recovery & Movement",
+      "experience": "7+ years of coaching",
+      "qualification": "Certified Mobility & Recovery Coach"
     },
     "ctaTitle": "FIND YOUR TRAINING PATH",
     "ctaDescription": "Explore coached classes designed around strength, endurance, and recovery."
