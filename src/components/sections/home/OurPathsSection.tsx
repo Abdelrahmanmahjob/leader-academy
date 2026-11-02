@@ -347,22 +347,14 @@ export function OurPathsSection({
                         >
                           {card.summary}
                         </p>
-                        <p
-                          data-reveal
-                          className={`mt-3 text-sm font-bold text-foreground/75 ${hiddenAtStart}`}
-                        >
-                          {t("pathPrice", {
-                            price: card.price,
-                            packagePrice: card.packagePrice,
-                          })}
-                        </p>
                         <div data-reveal className={hiddenAtStart}>
                           <Link
                             href={card.href}
                             className={buttonVariants({
                               variant: "glass-accent",
                               size: "lg",
-                              className: "mt-5 min-h-11! rounded-full! px-6!",
+                              className:
+                                "mt-5 min-h-11! rounded-full! px-6! mb-2!",
                             })}
                           >
                             {t("viewMore")}
