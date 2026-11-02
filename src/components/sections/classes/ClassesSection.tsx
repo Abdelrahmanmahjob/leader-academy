@@ -62,17 +62,11 @@ export function ClassesSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7">
-                <h2 className="text-2xl font-extrabold uppercase">
+                <h2 className="text-xl font-extrabold text-white uppercase">
                   {item.title}
                 </h2>
                 <p className="mt-3 mb-6 max-w-sm text-sm text-white/75">
                   {item.description}
-                </p>
-                <p className="mb-5 text-sm font-bold text-white">
-                  {paths("pathPrice", {
-                    price: item.price,
-                    packagePrice: item.packagePrice,
-                  })}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Link
