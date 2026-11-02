@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cairo, Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider } from "next-themes";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 import { isLocale, routing } from "@/i18n/routing";
@@ -10,6 +11,8 @@ import { Footer } from "@/components/layout/Footer";
 import { StripedPattern } from "@/components/magicui/striped-pattern";
 import "../globals.css";
 import { CtaSection } from "@/components/sections/home/CtaSection";
+import { StoreCartProvider } from "@/components/storefront/StoreCartContext";
+import { CartDrawer } from "@/components/storefront/CartDrawer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -54,34 +57,45 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
-      className={`${montserrat.variable} ${cairo.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${montserrat.variable} ${cairo.variable} h-full antialiased dark`}
     >
       <body
         className={`min-h-full bg-background text-foreground ${
           locale === "ar" ? "font-arabic" : "font-sans"
         }`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <a
-            className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-foreground"
-            href="#main-content"
-          >
-            {messages.common.skipToContent}
-          </a>
-          <div className="relative isolate min-h-screen">
-            <StripedPattern
-              width={18}
-              height={18}
-              className="z-0 text-white/[0.035] [mask-image:radial-gradient(700px_circle_at_center,white,transparent)]"
-            />
-            <div className="relative z-20 flex min-h-screen flex-col">
-              <Navbar />
-              <div className="flex-1">{children}</div>
-              <CtaSection />
-              <Footer />
-            </div>
-          </div>
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          storageKey="leader-academy-theme"
+        >
+          <NextIntlClientProvider messages={messages}>
+            <a
+              className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-foreground"
+              href="#main-content"
+            >
+              {messages.common.skipToContent}
+            </a>
+            <StoreCartProvider>
+              <div className="relative isolate min-h-screen">
+                <StripedPattern
+                  width={18}
+                  height={18}
+                  className="z-0 text-white/[0.035] [mask-image:radial-gradient(700px_circle_at_center,white,transparent)]"
+                />
+                <div className="relative z-20 flex min-h-screen flex-col">
+                  <Navbar />
+                  <CartDrawer />
+                  <div className="flex-1">{children}</div>
+                  <CtaSection />
+                  <Footer />
+                </div>
+              </div>
+            </StoreCartProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

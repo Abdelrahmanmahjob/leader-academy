@@ -5,6 +5,7 @@ import {
   Info,
   LayoutGrid,
   Mail,
+  ShoppingBag,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -45,15 +46,21 @@ export const contactLink = {
   labelKey: "contact",
   icon: Mail,
 } as const;
+export const productsLink = {
+  href: "/products",
+  labelKey: "products",
+  icon: ShoppingBag,
+} as const;
 
 /** Links shown after the Classes dropdown on desktop. */
-export const trailingLinks = [trainersLink, contactLink] as const;
+export const trailingLinks = [trainersLink, productsLink, contactLink] as const;
 
 /** Flat list used by the mobile overlay (same order as the desktop bar). */
 export const mobileLinks = [
   ...primaryLinks,
   ...classesLinks,
   trainersLink,
+  productsLink,
   contactLink,
 ] as const;
 
@@ -81,7 +88,7 @@ export function dockItemClass(selected: boolean): string {
 
 /** Primary call-to-action pill (white capsule), shared by desktop bar and mobile overlay. */
 export const ctaClass =
-  "inline-flex min-h-12 items-center justify-center rounded-full bg-foreground px-6 text-[15px] font-semibold text-inverse " +
+  "inline-flex min-h-12 items-center justify-center rounded-full bg-foreground px-6 text-[12px] font-semibold text-inverse " +
   "transition-[background-color,box-shadow,transform] duration-200 hover:bg-muted " +
   "hover:shadow-[0_0_0_4px_color-mix(in_srgb,var(--la-accent)_22%,transparent)] active:scale-[0.97]";
 

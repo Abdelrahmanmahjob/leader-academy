@@ -21,6 +21,7 @@ export function AboutValues() {
       <SectionHeading
         id="about-values-title"
         align="center"
+        eyebrow={t("valuesEyebrow")}
         title={t("valuesTitle")}
         description={t("valuesDescription")}
       />

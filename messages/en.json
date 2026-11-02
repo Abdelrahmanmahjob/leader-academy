@@ -9,6 +9,7 @@
     "classes": "Classes",
     "timetable": "Timetable",
     "trainers": "Trainers",
+    "products": "Shop",
     "contact": "Contact",
     "getStarted": "Get Started",
     "mainNavigation": "Main navigation",
@@ -16,9 +17,139 @@
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu",
     "toggleClasses": "Toggle Classes menu",
+    "toggleTheme": "Toggle light and dark theme",
     "languageSwitch": "Switch language",
     "login": "Log in",
     "homeLabel": "Leader Academy home"
+  },
+  "storeCart": {
+    "openCart": "Open shopping bag, {count} items",
+    "title": "Your bag",
+    "closeCart": "Close shopping bag",
+    "itemCount": "{count} items in your bag",
+    "emptyTitle": "Your bag is waiting",
+    "emptyDescription": "Add something that helps you train, play, and represent Leader Academy.",
+    "continueShopping": "Continue shopping",
+    "removeItem": "Remove {name} from bag",
+    "decreaseItem": "Decrease quantity of {name}",
+    "increaseItem": "Increase quantity of {name}",
+    "couponLabel": "Discount code",
+    "couponPlaceholder": "Enter your code",
+    "applyCoupon": "Apply",
+    "applied": "Applied",
+    "removeCoupon": "Remove",
+    "demoCodes": "Try LEADER10 or TEAM15 for a demo discount.",
+    "couponInvalid": "That code is not valid. Try LEADER10 or TEAM15.",
+    "couponApplied": "{percent}% demo discount applied.",
+    "subtotal": "Subtotal",
+    "discount": "Discount ({percent}%)",
+    "total": "Total",
+    "checkout": "Demo checkout",
+    "demoCheckout": "Demo checkout only — no payment will be taken.",
+    "shippingNote": "Shipping and taxes are calculated at checkout."
+  },
+  "productsPage": {
+    "eyebrow": "The Leader Academy shop",
+    "title": "Gear up. Show up. Lead.",
+    "description": "Training essentials and academy favorites, picked for the pitch, the gym, and everything in between.",
+    "shopNow": "Explore the collection",
+    "heroImageAlt": "Leader Academy players wearing team training apparel",
+    "heroCardEyebrow": "Made for every session",
+    "heroCardTitle": "Your training. Your colors.",
+    "perks": {
+      "official": "Academy-inspired gear",
+      "training": "Ready for training days",
+      "demo": "Demo storefront"
+    },
+    "collectionEyebrow": "The collection",
+    "collectionTitle": "Find your next favorite",
+    "collectionDescription": "From training tops to pitch essentials, explore the demo collection and add your picks to the bag.",
+    "productCount": "{count} products",
+    "filterLabel": "Filter products by category",
+    "categories": {
+      "all": "All products",
+      "apparel": "Apparel & Official Uniforms",
+      "protection": "Protective & Goalkeeper Gear",
+      "training": "Home & Individual Training Equipment",
+      "bags": "Bags & Carrying Storage"
+    },
+    "categoryDescriptions": {
+      "apparel": "Official kits, tracksuits, and outerwear designed for match days and training.",
+      "protection": "Safety gear and specialized goalkeeper equipment for pitch protection.",
+      "training": "Gear designed for individual footwork, accuracy, and agility practice at home.",
+      "bags": "Functional storage equipment tailored for transporting kit items to pitch grounds."
+    },
+    "addToCart": "Add",
+    "addedToCart": "Added",
+    "sale": "Special price",
+    "newProduct": "New",
+    "ratingLabel": "{rating} out of 5, {reviews} reviews",
+    "demoNotice": "Demo shop: products, prices, discounts, and checkout are sample content. No real orders or payments are processed.",
+    "memberEyebrow": "Train like a Leader",
+    "memberTitle": "Ready for your next session?",
+    "memberDescription": "Explore the collection, build your bag, and find a little extra motivation for your next training day.",
+    "items": {
+      "custom-soccer-kit": {
+        "name": "Custom Soccer Jersey Set",
+        "description": "A fully sublimated, breathable jersey and matching dry-fit mesh shorts provide freedom of movement on match days.",
+        "imageAlt": "Sports apparel illustrating a custom soccer uniform set"
+      },
+      "competition-training-jacket": {
+        "name": "Competition Training Jacket",
+        "description": "A slim-fit, full-zip training top with ventilation panels to keep players comfortable during cold-weather sessions.",
+        "imageAlt": "Athlete wearing training apparel"
+      },
+      "2026-city-hoodie": {
+        "name": "2026 City Hoodie",
+        "description": "A warm, heavyweight cotton hoodie with bold tournament-inspired graphics for travel to winter matches.",
+        "imageAlt": "Sports bag and apparel illustrating a city graphic hoodie"
+      },
+      "junior-goalkeeper-gloves": {
+        "name": "Junior Goalkeeper Gloves",
+        "description": "Reliable grip in wet or dry conditions, soft foam palms, and an adjustable wrist closure for young goalkeepers.",
+        "imageAlt": "Training gear illustrating youth goalkeeper gloves"
+      },
+      "youth-shin-guards": {
+        "name": "Youth Padded Shin Guards",
+        "description": "A rigid protective shell, shock-absorbing foam, and ankle support straps help protect young players during matches.",
+        "imageAlt": "Football equipment illustrating protective shin guards"
+      },
+      "non-slip-grip-socks": {
+        "name": "Non-Slip Grip Socks",
+        "description": "Specialized grip pads help stabilize the foot inside cleats and reduce slipping during quick changes of direction.",
+        "imageAlt": "Sports apparel illustrating non-slip grip socks"
+      },
+      "speed-agility-ladder": {
+        "name": "Speed & Footwork Agility Ladder",
+        "description": "A 7.5-meter ladder helps young players build quick footwork, coordination, and lateral balance.",
+        "imageAlt": "Athlete performing speed and footwork drills"
+      },
+      "portable-soccer-goal": {
+        "name": "Portable Soccer Goal Net",
+        "description": "A powder-coated steel frame and high-density mesh net make solo passing and first-touch drills easy to set up.",
+        "imageAlt": "Football equipment illustrating an individual training goal"
+      },
+      "precision-target-net": {
+        "name": "Precision Football Target Net",
+        "description": "Attach this target net to a goal to refine shooting accuracy; its carry bag can also hold up to three balls.",
+        "imageAlt": "Football equipment illustrating a shooting target net"
+      },
+      "soccer-backpack-ball-holder": {
+        "name": "Soccer Backpack with Ball Holder",
+        "description": "A spacious football backpack with dedicated ball and shoe compartments plus insulated pockets to keep drinks cool.",
+        "imageAlt": "Sports backpack illustrating a football bag with ball storage"
+      },
+      "multi-compartment-sports-backpack": {
+        "name": "Multi-Compartment Sports Backpack",
+        "description": "A 34-liter backpack with dedicated ball and shoe sections and a padded back for everyday academy travel.",
+        "imageAlt": "Sports backpack illustrating a multi-compartment training bag"
+      },
+      "boot-bag": {
+        "name": "Football Boot Bag",
+        "description": "Breathable side panels and a water-resistant base keep muddy boots separate from clean training clothes.",
+        "imageAlt": "Sports backpack illustrating a football boot bag"
+      }
+    }
   },
   "footer": {
     "brandDescription": "Leader Academy — established 2023.",
@@ -60,7 +191,7 @@
       "label": "Featured highlights",
       "slides": [
         {
-          "title": "ACHIEVE MORE THAN JUST FITNESS",
+          "title": "Your path to professionalism begins here",
           "description": "Combine strength, flexibility, and endurance in a community that values well-rounded health and supportive growth.",
           "primary": "Start Now",
           "secondary": "View Services"
@@ -99,47 +230,109 @@
       "goToSlide": "Go to slide"
     },
     "paths": {
-      "title": "CHOOSE OUR PATH TO FITNESS",
+      "title": "CHOOSE YOUR FOOTBALL PATH",
       "viewMore": "View More",
+      "audienceLabel": "Choose a training group",
+      "menLabel": "Men",
+      "womenLabel": "Women",
+      "pathPrice": "Sample pricing · SAR {price} / session · SAR {packagePrice} / 8 sessions",
       "cards": [
         {
+          "id": "men-strength",
           "eyebrow": "ALL LEVELS",
-          "title": "10-12",
-          "summary": "Build muscle and increase stamina",
-          "description": "Progressive strength sessions with coaching cues, form support, and programming that scales with you.",
+          "title": "Ball Mastery",
+          "summary": "Build confident control and technique",
+          "description": "Develop close control, passing, and first touch through progressive football coaching tailored to your experience.",
           "image": "/images/home-page/our-paths/our-paths1.webp",
-          "href": "/services/strength"
+          "href": "/services/strength",
+          "price": "90",
+          "packagePrice": "640"
         },
         {
+          "id": "men-cardio",
           "eyebrow": "INTERMEDIATE",
-          "title": "13-15",
-          "summary": "Heart health and weight loss",
-          "description": "High-energy cardio classes that mix intervals, cycling, and athletic conditioning.",
+          "title": "Game Intelligence",
+          "summary": "Read the game and make better decisions",
+          "description": "Build football awareness, movement off the ball, and quick decision-making through coached drills and small-sided play.",
           "image": "/images/home-page/our-paths/our-paths2.webp",
-          "href": "/services/cardio"
+          "href": "/services/cardio",
+          "price": "75",
+          "packagePrice": "520"
         },
         {
+          "id": "men-mobility",
           "eyebrow": "ELITE",
-          "title": "16-18",
-          "summary": "Clarity, mobility, and recovery",
-          "description": "Flow, stretch, and breath work to restore mobility and keep you training consistently.",
+          "title": "Match Readiness",
+          "summary": "Prepare for the pace of competition",
+          "description": "Sharpen football-specific movement, positioning, and match preparation with focused practice and guided recovery.",
           "image": "/images/home-page/our-paths/our-paths3.webp",
-          "href": "/services/mobility"
+          "href": "/services/mobility",
+          "price": "70",
+          "packagePrice": "480"
         },
         {
+          "id": "men-football",
           "eyebrow": "ADVANCED",
-          "title": "19-21",
-          "summary": "Build confidence through football",
-          "description": "Develop technical ability, strength, and match-ready fitness with focused coaching and a supportive team.",
+          "title": "Elite Performance",
+          "summary": "Take your football performance further",
+          "description": "Refine advanced technique, tactical execution, and match performance through structured football coaching.",
           "image": "/images/home-page/our-paths/our-paths4.webp",
-          "href": "/services/football"
+          "href": "/services/football",
+          "price": "100",
+          "packagePrice": "720"
+        }
+      ],
+      "womenCards": [
+        {
+          "id": "women-strength",
+          "eyebrow": "ALL LEVELS",
+          "title": "Ball Mastery",
+          "summary": "Build confident control and technique",
+          "description": "Develop close control, passing, and first touch through progressive football coaching in a welcoming women’s group.",
+          "image": "/images/home-page/our-paths/women-path-1.webp",
+          "href": "/services/women-strength",
+          "price": "85",
+          "packagePrice": "600"
+        },
+        {
+          "id": "women-cardio",
+          "eyebrow": "ALL LEVELS",
+          "title": "Game Intelligence",
+          "summary": "Read the game and make better decisions",
+          "description": "Build football awareness, movement off the ball, and quick decision-making through women-focused drills and small-sided play.",
+          "image": "/images/home-page/our-paths/women-path-2.webp",
+          "href": "/services/women-cardio",
+          "price": "70",
+          "packagePrice": "480"
+        },
+        {
+          "id": "women-mobility",
+          "eyebrow": "ALL LEVELS",
+          "title": "Match Readiness",
+          "summary": "Prepare for the pace of competition",
+          "description": "Practice football-specific movement, positioning, and match preparation in a supportive women’s training environment.",
+          "image": "/images/home-page/our-paths/women-path-3.webp",
+          "href": "/services/women-mobility",
+          "price": "65",
+          "packagePrice": "440"
+        },
+        {
+          "id": "women-football",
+          "eyebrow": "ALL LEVELS",
+          "title": "Elite Performance",
+          "summary": "Take your football performance further",
+          "description": "Refine advanced football technique, tactical execution, and match performance through structured coaching for women.",
+          "image": "/images/home-page/our-paths/women-path-4.webp",
+          "href": "/services/women-football",
+          "price": "90",
+          "packagePrice": "640"
         }
       ]
     },
     "weeklyClasses": {
-      "eyebrow": "TRAIN ON YOUR TERMS",
-      "title": "A WEEK BUILT FOR YOUR GOALS",
-      "description": "Make room for progress. Explore a full week of coached strength, cardio, mobility, and football classes, then choose the sessions that fit your routine.",
+      "eyebrow": "TRAIN FOR THE GAME",
+      "title": "A WEEK OF FOOTBALL DEVELOPMENT",
+      "description": "Train throughout the week with football coaching focused on ball skills, tactical awareness, match fitness, and performance.",
       "boardEyebrow": "WEEKLY CLASS SCHEDULE",
       "chooseDay": "Choose a day to see its classes",
       "boardNote": "A snapshot of this week's schedule.",
@@ -157,15 +350,19 @@
           "sessions": [
             {
               "time": "06:00",
-              "title": "Strength Foundations",
-              "track": "Strength"
+              "title": "Ball Control & First Touch",
+              "track": "Football Skills"
             },
             {
               "time": "17:30",
-              "title": "Cardio Conditioning",
-              "track": "Cardio"
+              "title": "Football Conditioning",
+              "track": "Match Fitness"
             },
-            { "time": "19:00", "title": "Mobility Flow", "track": "Mobility" },
+            {
+              "time": "19:00",
+              "title": "Football Movement & Agility",
+              "track": "Football Skills"
+            },
             { "time": "20:00", "title": "Football Skills", "track": "Football" }
           ]
         },
@@ -176,14 +373,18 @@
           "sessions": [
             {
               "time": "07:00",
-              "title": "Functional Strength",
-              "track": "Strength"
+              "title": "Passing & Combination Play",
+              "track": "Football Skills"
             },
-            { "time": "18:00", "title": "HIIT Cycling", "track": "Cardio" },
+            {
+              "time": "18:00",
+              "title": "Football Speed & Stamina",
+              "track": "Match Fitness"
+            },
             {
               "time": "19:30",
-              "title": "Recovery Stretch",
-              "track": "Mobility"
+              "title": "Football Mobility & Recovery",
+              "track": "Football Player Development"
             },
             {
               "time": "20:30",
@@ -199,18 +400,18 @@
           "sessions": [
             {
               "time": "06:30",
-              "title": "Progressive Strength",
-              "track": "Strength"
+              "title": "Dribbling & Ball Mastery",
+              "track": "Football Skills"
             },
             {
               "time": "17:30",
-              "title": "Athletic Intervals",
-              "track": "Cardio"
+              "title": "Football Conditioning",
+              "track": "Match Fitness"
             },
             {
               "time": "19:00",
-              "title": "Guided Mobility",
-              "track": "Mobility"
+              "title": "Football Movement & Agility",
+              "track": "Football Player Development"
             },
             {
               "time": "20:00",
@@ -224,12 +425,20 @@
           "label": "TUE",
           "name": "Tuesday",
           "sessions": [
-            { "time": "07:00", "title": "Power Circuit", "track": "Strength" },
-            { "time": "18:00", "title": "Endurance Ride", "track": "Cardio" },
+            {
+              "time": "07:00",
+              "title": "Shooting & Finishing",
+              "track": "Football Skills"
+            },
+            {
+              "time": "18:00",
+              "title": "Football Speed & Stamina",
+              "track": "Match Fitness"
+            },
             {
               "time": "19:30",
-              "title": "Stretch & Restore",
-              "track": "Mobility"
+              "title": "Football Mobility & Recovery",
+              "track": "Football Player Development"
             },
             {
               "time": "20:30",
@@ -245,14 +454,18 @@
           "sessions": [
             {
               "time": "06:00",
-              "title": "Total Body Strength",
-              "track": "Strength"
+              "title": "Defending & Ball Recovery",
+              "track": "Football Skills"
             },
-            { "time": "17:30", "title": "Cardio Intervals", "track": "Cardio" },
+            {
+              "time": "17:30",
+              "title": "Football Conditioning",
+              "track": "Match Fitness"
+            },
             {
               "time": "19:00",
-              "title": "Mobility & Balance",
-              "track": "Mobility"
+              "title": "Football Movement & Agility",
+              "track": "Football Player Development"
             },
             {
               "time": "20:00",
@@ -268,11 +481,19 @@
           "sessions": [
             {
               "time": "07:00",
-              "title": "Strength & Form",
-              "track": "Strength"
+              "title": "First Touch & Passing",
+              "track": "Football Skills"
             },
-            { "time": "18:00", "title": "Cycle & Sweat", "track": "Cardio" },
-            { "time": "19:30", "title": "Evening Flow", "track": "Mobility" },
+            {
+              "time": "18:00",
+              "title": "Football Speed & Stamina",
+              "track": "Match Fitness"
+            },
+            {
+              "time": "19:30",
+              "title": "Football Mobility & Recovery",
+              "track": "Football Player Development"
+            },
             { "time": "20:30", "title": "Football Skills", "track": "Football" }
           ]
         },
@@ -283,18 +504,18 @@
           "sessions": [
             {
               "time": "08:00",
-              "title": "Weekend Strength",
-              "track": "Strength"
+              "title": "Small-Sided Match Play",
+              "track": "Football Skills"
             },
             {
               "time": "16:30",
-              "title": "Full Energy Cardio",
-              "track": "Cardio"
+              "title": "Match Fitness & Conditioning",
+              "track": "Match Fitness"
             },
             {
               "time": "18:00",
-              "title": "Reset & Recover",
-              "track": "Mobility"
+              "title": "Football Mobility & Recovery",
+              "track": "Football Player Development"
             },
             {
               "time": "19:00",
@@ -343,8 +564,9 @@
       "partnersLabel": "Partner integrations",
       "ctaTitle": "Train with the best",
       "ctaDescription": "Meet every coach on our team and find the one who fits your goals.",
-      "introTitle": "EMPOWERING YOUR FITNESS JOURNEY",
+      "introTitle": "EMPOWERING YOUR PROFESSIONAL JOURNEY",
       "introDescription": "Welcome to Leader Academy, where a healthier, happier you starts with personalized training and a supportive community. Our studio is a space for transformation, where people of every fitness level come together to reach their goals. With a focus on innovation and inclusivity, training here is more than a workout — it's a lifestyle.",
+      "valuesEyebrow": "OUR VALUES",
       "valuesTitle": "OUR Core Values",
       "valuesDescription": "guide everything we do",
       "values": [
@@ -386,100 +608,224 @@
           "role": "Recovery & Movement",
           "image": "/images/trainer-page/coach3.webp"
         }
+      ],
+      "achievementsEyebrow": "Real milestones",
+      "achievementsTitle": "OUR ACHIEVEMENTS",
+      "achievementsDescription": "Follow the milestones that make every season count. Entries marked Demo are placeholders for future academy results.",
+      "achievementDemoLabel": "Demo",
+      "achievementsPrev": "Previous achievement",
+      "achievementsNext": "Next achievement",
+      "achievementsCounter": "Achievement {current} of {total}",
+      "achievements": [
+        {
+          "category": "Championship result",
+          "title": "First place on the podium",
+          "description": "A Leader Academy athlete took first place, bringing home the championship trophy through hard work and determination.",
+          "highlight": "1st place",
+          "image": "/images/about-page/about2.jpg",
+          "imageAlt": "Leader Academy footballer celebrating with a first-place trophy and medal"
+        },
+        {
+          "category": "Professional milestone",
+          "title": "A three-year contract with Al‑Shabab",
+          "description": "Academy player Mohammed Al‑Dawsari signed a three-year professional contract with Al‑Shabab—an exciting next step in his football journey.",
+          "highlight": "3-year contract",
+          "image": "/images/about-page/about1.jpeg",
+          "imageAlt": "Leader Academy celebrates Mohammed Al-Dawsari signing a professional contract with Al-Shabab"
+        },
+        {
+          "category": "Championship result",
+          "title": "A second-place finish at the youth championship",
+          "description": "Demo story: after a season of focused practice and team play, the academy squad reaches the final and earns the silver medal.",
+          "highlight": "Demo · 2nd place",
+          "image": "/images/about-page/about2.jpg",
+          "imageAlt": "Football player celebrating a trophy, used for a demo achievement",
+          "sample": true
+        },
+        {
+          "category": "Player development",
+          "title": "Three players selected for regional trials",
+          "description": "Demo story: consistent performances earn three academy players invitations to regional selection trials and a chance to take the next step.",
+          "highlight": "Demo · 3 selections",
+          "image": "/images/trainer-page/coach1.jpeg",
+          "imageAlt": "Academy coach supporting a player, used for a demo achievement",
+          "sample": true
+        },
+        {
+          "category": "Academy recognition",
+          "title": "Recognized for outstanding player development",
+          "description": "Demo story: the coaching team receives a community award for creating a supportive environment where young athletes can learn and grow.",
+          "highlight": "Demo · Academy award",
+          "image": "/images/about-page/about1.jpeg",
+          "imageAlt": "Academy signing announcement, used for a demo achievement",
+          "sample": true
+        },
+        {
+          "category": "Member success",
+          "title": "A season of personal bests",
+          "description": "Demo story: athletes across the program set new personal records, build confidence, and celebrate progress together at the end-of-season event.",
+          "highlight": "Demo · New personal bests",
+          "image": "/images/trainer-page/coach2.jpg",
+          "imageAlt": "Academy trainer coaching an athlete, used for a demo achievement",
+          "sample": true
+        },
+        {
+          "category": "Team achievement",
+          "title": "An unbeaten run through the season",
+          "description": "Demo story: teamwork, discipline, and steady preparation carry the academy team through a memorable unbeaten league campaign.",
+          "highlight": "Demo · Unbeaten season",
+          "image": "/images/trainer-page/coach3.webp",
+          "imageAlt": "Academy trainer, used for a demo team achievement",
+          "sample": true
+        },
+        {
+          "category": "Community impact",
+          "title": "Bringing the community together through sport",
+          "description": "Demo story: players, families, and coaches come together for a community sports day celebrating movement, connection, and the joy of the game.",
+          "highlight": "Demo · Community event",
+          "image": "/images/about-page/video-sum.jpg",
+          "imageAlt": "Leader Academy community and training, used for a demo achievement",
+          "sample": true
+        }
       ]
     },
     "servicesPage": {
-      "pathsTitle": "ELEVATE YOUR WORKOUT EXPERIENCE",
-      "packagesTitle": "SERVICE PACKAGES",
+      "pathsTitle": "FOOTBALL PATHWAYS FOR EVERY PLAYER",
+      "packagesTitle": "FOOTBALL TRAINING PACKAGES",
+      "pricingNote": "Sample pricing for demonstration",
       "viewPackages": "View Packages",
       "moreTitle": "MORE SERVICES",
       "services": {
         "strength": {
-          "name": "Strength & Fitness",
-          "eyebrow": "BUILD POWER",
-          "description": "Progressive strength coaching built around your movement level, goals, and recovery. Learn proper form, build confidence, and develop lasting muscle and stamina.",
+          "name": "Football Skills & Technique",
+          "eyebrow": "MASTER THE BALL",
+          "description": "Build a confident first touch, close control, accurate passing, and composed finishing through progressive football coaching.",
           "highlights": [
-            "Personalized programming",
-            "Technique and form coaching",
-            "Progress tracking every 4 weeks"
+            "First touch and ball control",
+            "Passing, dribbling, and finishing",
+            "Skill progression every 4 weeks"
           ],
-          "packagesDescription": "Packages for Strength & Fitness"
+          "packagesDescription": "Football skills and technique packages"
         },
         "cardio": {
-          "name": "Cardio & Heart Health",
-          "eyebrow": "BOOST ENDURANCE",
-          "description": "High-energy sessions combining intervals, cycling, and athletic conditioning. Improve heart health, burn energy, and build endurance in a motivating group environment.",
+          "name": "Football Conditioning",
+          "eyebrow": "BUILD MATCH FITNESS",
+          "description": "Football-specific speed, agility, and stamina training helps players sustain effort, react quickly, and stay effective throughout a match.",
           "highlights": [
-            "Coach-led interval sessions",
-            "Cardio and cycling options",
-            "Beginner-friendly modifications"
+            "Speed and agility drills",
+            "Football-focused stamina work",
+            "Conditioning for match situations"
           ],
-          "packagesDescription": "Packages for Cardio & Heart Health"
+          "packagesDescription": "Football conditioning packages"
         },
         "mobility": {
-          "name": "Mobility & Recovery",
-          "eyebrow": "RESTORE BALANCE",
-          "description": "Flow, stretch, and breath work designed to improve mobility, reduce tension, and support consistent training. Leave feeling stronger, calmer, and ready for your next session.",
+          "name": "Football Movement & Recovery",
+          "eyebrow": "MOVE WELL. PLAY WELL.",
+          "description": "Football-specific movement, balance, and recovery work supports fluid changes of direction and helps players prepare for their next session.",
           "highlights": [
-            "Mobility and flexibility work",
-            "Guided breath and recovery",
-            "Small, focused groups"
+            "Football movement and balance",
+            "Guided warm-up and recovery",
+            "Injury-aware movement practice"
           ],
-          "packagesDescription": "Packages for Mobility & Recovery"
+          "packagesDescription": "Football movement and recovery packages"
         },
         "football": {
-          "name": "Football Performance",
+          "name": "Football Match Performance",
           "eyebrow": "LEARN. IMPROVE. BELONG.",
-          "description": "Ages 19–21 train together to build confident, capable footballers. Develop technical skills, game awareness, strength, and match fitness through structured coaching and a supportive team environment.",
+          "description": "Players develop technical skills, game awareness, tactical execution, and match fitness through structured football coaching and supportive team play.",
           "highlights": [
             "Technical skills and ball control",
-            "Strength, speed, and match conditioning",
+            "Speed, agility, and match conditioning",
             "Team play and tactical awareness"
           ],
-          "packagesDescription": "Packages for Football Performance"
+          "packagesDescription": "Football match performance packages"
+        },
+        "women-strength": {
+          "name": "Women’s Football Skills & Technique",
+          "eyebrow": "MASTER THE BALL",
+          "description": "Women-focused football coaching develops a confident first touch, close control, accurate passing, and composed finishing.",
+          "highlights": [
+            "First touch and ball control",
+            "Passing, dribbling, and finishing",
+            "Skill progression every 4 weeks"
+          ],
+          "packagesDescription": "Women’s football skills and technique packages"
+        },
+        "women-cardio": {
+          "name": "Women’s Football Conditioning",
+          "eyebrow": "BUILD MATCH FITNESS",
+          "description": "Women-focused, football-specific speed, agility, and stamina training helps players sustain effort, react quickly, and stay effective throughout a match.",
+          "highlights": [
+            "Speed and agility drills",
+            "Football-focused stamina work",
+            "Conditioning for match situations"
+          ],
+          "packagesDescription": "Women’s football conditioning packages"
+        },
+        "women-mobility": {
+          "name": "Women’s Football Movement & Recovery",
+          "eyebrow": "MOVE WELL. PLAY WELL.",
+          "description": "Women-focused football movement, balance, and recovery work supports fluid changes of direction and preparation for the next session.",
+          "highlights": [
+            "Football movement and balance",
+            "Guided warm-up and recovery",
+            "Injury-aware movement practice"
+          ],
+          "packagesDescription": "Women’s football movement and recovery packages"
+        },
+        "women-football": {
+          "name": "Women’s Football Match Performance",
+          "eyebrow": "LEARN. PLAY. GROW.",
+          "description": "Women-focused football coaching that develops ball control, game awareness, teamwork, and match fitness for varied experience levels.",
+          "highlights": [
+            "Ball control and technical skills",
+            "Teamwork and game awareness",
+            "Progressive match conditioning"
+          ],
+          "packagesDescription": "Women’s Football Development packages"
         }
       },
       "packagePrices": {
         "strength": [
           {
-            "name": "Strength Drop-in",
+            "name": "Football Skills Drop-in",
             "price": "90",
             "unit": "session",
-            "description": "One coached strength class with form support."
+            "description": "One coached football skills session focused on technique."
           },
           {
-            "name": "Strength 8-pack",
+            "name": "Football Skills 8-pack",
             "price": "640",
             "unit": "8 sessions",
-            "description": "Progressive blocks for consistent strength training."
+            "description": "Eight sessions to build football ball control and technique."
           }
         ],
         "cardio": [
           {
-            "name": "Cardio Drop-in",
+            "name": "Football Conditioning Drop-in",
             "price": "75",
             "unit": "session",
-            "description": "One high-energy cardio session with a coach."
+            "description": "One coached football speed and conditioning session."
           },
           {
-            "name": "Cardio 8-pack",
+            "name": "Football Conditioning 8-pack",
             "price": "520",
             "unit": "8 sessions",
-            "description": "Build endurance with eight guided classes."
+            "description": "Eight sessions to build football-specific stamina."
           }
         ],
         "mobility": [
           {
-            "name": "Mobility Drop-in",
+            "name": "Football Movement Drop-in",
             "price": "70",
             "unit": "session",
-            "description": "One focused mobility and recovery session."
+            "description": "One football movement and guided recovery session."
           },
           {
-            "name": "Mobility 8-pack",
+            "name": "Football Movement 8-pack",
             "price": "480",
             "unit": "8 sessions",
-            "description": "Eight flow, stretch, and recovery sessions."
+            "description": "Eight sessions for football movement and recovery."
           }
         ],
         "football": [
@@ -493,7 +839,63 @@
             "name": "Football 8-pack",
             "price": "720",
             "unit": "8 sessions",
-            "description": "Eight sessions to develop skills, fitness, and confidence."
+            "description": "Eight sessions to develop football skills, match fitness, and confidence."
+          }
+        ],
+        "women-strength": [
+          {
+            "name": "Women’s Football Skills Drop-in",
+            "price": "85",
+            "unit": "session",
+            "description": "One women-focused football skills session with technique coaching."
+          },
+          {
+            "name": "Women’s Football Skills 8-pack",
+            "price": "600",
+            "unit": "8 sessions",
+            "description": "Eight sessions to build football ball control and technique."
+          }
+        ],
+        "women-cardio": [
+          {
+            "name": "Women’s Football Conditioning Drop-in",
+            "price": "70",
+            "unit": "session",
+            "description": "One women-focused football speed and conditioning session."
+          },
+          {
+            "name": "Women’s Football Conditioning 8-pack",
+            "price": "480",
+            "unit": "8 sessions",
+            "description": "Eight sessions to build football-specific stamina."
+          }
+        ],
+        "women-mobility": [
+          {
+            "name": "Women’s Football Movement Drop-in",
+            "price": "65",
+            "unit": "session",
+            "description": "One women-focused football movement and recovery session."
+          },
+          {
+            "name": "Women’s Football Movement 8-pack",
+            "price": "440",
+            "unit": "8 sessions",
+            "description": "Eight sessions for football movement and recovery."
+          }
+        ],
+        "women-football": [
+          {
+            "name": "Women’s Football Drop-in",
+            "price": "90",
+            "unit": "session",
+            "description": "One coached women’s football development session."
+          },
+          {
+            "name": "Women’s Football 8-pack",
+            "price": "640",
+            "unit": "8 sessions",
+            "description": "Eight sessions to develop football skills and match fitness."
           }
         ]
       },
@@ -636,20 +1038,20 @@
     "ctaDescription": "Explore coached classes designed around strength, endurance, and recovery."
   },
   "classesPage": {
-    "eyebrow": "TRAIN TOGETHER",
-    "title": "CLASSES FOR EVERY GOAL",
-    "description": "Choose a class format that matches your training age, schedule, and ambition.",
+    "eyebrow": "FOOTBALL TRAINING",
+    "title": "FOOTBALL CLASSES FOR EVERY PLAYER",
+    "description": "Choose football coaching focused on technique, tactical awareness, match fitness, and player development.",
     "strength": {
-      "name": "Strength Training",
-      "text": "Build power and confidence with coached progressive sessions."
+      "name": "Football Skills & Technique",
+      "text": "Develop ball control, first touch, passing, dribbling, and finishing."
     },
     "cardio": {
-      "name": "Cardio & Endurance",
-      "text": "Improve fitness through energetic interval and conditioning classes."
+      "name": "Football Conditioning",
+      "text": "Build football-specific speed, agility, stamina, and match fitness."
     },
     "mobility": {
-      "name": "Mobility & Recovery",
-      "text": "Move better, recover consistently, and keep your body training-ready."
+      "name": "Football Movement & Recovery",
+      "text": "Practice football movement, balance, warm-ups, and guided recovery."
     },
     "football": {
       "name": "Football Performance",
@@ -660,17 +1062,28 @@
   },
   "timetablePage": {
     "eyebrow": "WEEKLY PLAN",
-    "title": "CLASS TIMETABLE",
+    "title": "FOOTBALL TIMETABLE",
     "duration": "60 min · All levels",
     "daysLabel": "Select a day",
     "today": "Today",
     "previousWeek": "Previous week",
     "nextWeek": "Next week",
+    "audienceLabel": "Choose a training group",
+    "menLabel": "Men",
+    "womenLabel": "Women",
     "classes": {
-      "strength": "Strength",
-      "mobility": "Mobility",
-      "cardio": "Cardio",
-      "football": "Football Performance"
+      "men": {
+        "strength": "Football Skills & Technique",
+        "mobility": "Football Movement & Recovery",
+        "cardio": "Football Conditioning",
+        "football": "Football Match Performance"
+      },
+      "women": {
+        "strength": "Women’s Football Skills & Technique",
+        "mobility": "Women’s Football Movement & Recovery",
+        "cardio": "Women’s Football Conditioning",
+        "football": "Women’s Football Match Performance"
+      }
     }
   },
   "contactPage": {

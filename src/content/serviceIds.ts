@@ -3,6 +3,10 @@ export const SERVICE_IDS = [
   "cardio",
   "mobility",
   "football",
+  "women-strength",
+  "women-cardio",
+  "women-mobility",
+  "women-football",
 ] as const;
 
 export type ServiceId = (typeof SERVICE_IDS)[number];

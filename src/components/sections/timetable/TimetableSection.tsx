@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useMemo,
-  useRef,
-  useState,
-  useSyncExternalStore,
-} from "react";
+import { useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -15,8 +10,14 @@ import { Section } from "@/components/ui/Section";
 import { useDirection } from "@/hooks/useDirection";
 import { ClassCard } from "./ClassCard";
 import { DayTabs } from "./DayTabs";
-import { PANEL_ID, tabId, timetable } from "@/content/TimeTableData";
+import {
+  PANEL_ID,
+  tabId,
+  timetable,
+  womenTimetable,
+} from "@/content/TimeTableData";
 import { createFormatters } from "./TimeTableFormat";
+import { PathAudienceToggle } from "@/components/ui/PathAudienceToggle";
 
 gsap.registerPlugin(useGSAP);
 
@@ -50,6 +51,8 @@ export function TimetableSection() {
   const locale = useLocale();
   const { flip } = useDirection();
   const format = useMemo(() => createFormatters(locale), [locale]);
+  const [audience, setAudience] = useState<"men" | "women">("men");
+  const days = audience === "men" ? timetable : womenTimetable;
 
   const [dayId, setDayId] = useState(timetable[0].id);
   const [weekOffset, setWeekOffset] = useState(0);
@@ -63,7 +66,7 @@ export function TimetableSection() {
     : null;
   const weekStart = currentDate ? getSaturdayStart(currentDate) : null;
   const todayId = currentDate
-    ? (timetable.find((item) => item.weekday === currentDate.getDay())?.id ??
+    ? (days.find((item) => item.weekday === currentDate.getDay())?.id ??
       null)
     : null;
 
@@ -100,7 +103,7 @@ export function TimetableSection() {
   // Day change: cards slide in from the side the new day lies on (later day = from the inline-end side).
   useGSAP(
     () => {
-      const index = timetable.findIndex((day) => day.id === dayId);
+      const index = days.findIndex((day) => day.id === dayId);
       const direction = index >= previousIndex.current ? 1 : -1;
       previousIndex.current = index;
 
@@ -126,19 +129,19 @@ export function TimetableSection() {
         );
       });
     },
-    { scope: panelRef, dependencies: [dayId, flip] },
+    { scope: panelRef, dependencies: [dayId, flip, audience] },
   );
 
-  const day = timetable.find((item) => item.id === dayId) ?? timetable[0];
+  const day = days.find((item) => item.id === dayId) ?? days[0];
   const currentWeekStart = weekStart
     ? addDays(weekStart, weekOffset * 7)
     : null;
-  const dayIndex = timetable.findIndex((item) => item.id === day.id);
+  const dayIndex = days.findIndex((item) => item.id === day.id);
   const selectedDate = currentWeekStart
     ? addDays(currentWeekStart, dayIndex)
     : null;
   const weekEnd = currentWeekStart ? addDays(currentWeekStart, 6) : null;
-  const tabs = timetable.map((item, index) => ({
+  const tabs = days.map((item, index) => ({
     id: item.id,
     label: currentWeekStart
       ? `${format.weekdayShort(item.weekday)} ${format.date(addDays(currentWeekStart, index))}`
@@ -157,6 +160,16 @@ export function TimetableSection() {
             <h1 className="text-section-heading font-extrabold uppercase rtl:leading-[1.3] rtl:normal-case">
               {t("title")}
             </h1>
+          </div>
+
+          <div className="mb-8">
+            <PathAudienceToggle
+              value={audience}
+              onChange={setAudience}
+              menLabel={t("menLabel")}
+              womenLabel={t("womenLabel")}
+              label={t("audienceLabel")}
+            />
           </div>
 
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
@@ -225,19 +238,17 @@ export function TimetableSection() {
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {day.sessions.map((session, index) => (
                 <ClassCard
-                  key={`${day.id}-${session.time}`}
+                  key={`${audience}-${day.id}-${session.time}`}
+                  pathId={`${audience}-${session.type}`}
                   index={index}
                   type={session.type}
                   dateTime={session.time}
                   timeLabel={format.time(session.time)}
-                  name={t(`classes.${session.type}`)}
+                  name={t(`classes.${audience}.${session.type}`)}
                   duration={t("duration")}
                   detailsHref={
-                    session.type === "football" ? "/services/football" : undefined
-                  }
-                  detailsLabel={
                     session.type === "football"
-                      ? t("classes.viewFootballProgram")
+                      ? "/services/football"
                       : undefined
                   }
                 />

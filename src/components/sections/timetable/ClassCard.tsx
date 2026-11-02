@@ -3,23 +3,21 @@
 import { useRef } from "react";
 import {
   Clock,
-  Dumbbell,
   Goal,
-  HeartPulse,
-  PersonStanding,
   type LucideIcon,
 } from "lucide-react";
 import { useGlassSheen } from "@/hooks/useGlassSheen";
 import type { ClassType } from "@/content/TimeTableData";
 
 const typeIcons: Record<ClassType, LucideIcon> = {
-  strength: Dumbbell,
-  mobility: PersonStanding,
-  cardio: HeartPulse,
+  strength: Goal,
+  mobility: Goal,
+  cardio: Goal,
   football: Goal,
 };
 
 type ClassCardProps = {
+  pathId: string;
   index: number;
   type: ClassType;
   /** 24h value for the machine-readable <time dateTime>. */
@@ -33,6 +31,7 @@ type ClassCardProps = {
 };
 
 export function ClassCard({
+  pathId,
   index,
   type,
   dateTime,
@@ -47,6 +46,7 @@ export function ClassCard({
   return (
     <article
       ref={ref}
+      data-path-id={pathId}
       className={`timetable-card group glass-panel relative flex ${type === "football" ? "min-h-[19rem] text-white" : "min-h-[15rem]"} flex-col overflow-hidden rounded-3xl p-6 transition-[translate,border-color] duration-500 hover:-translate-y-1.5 hover:border-accent/50`}
     >
       <div className="relative z-10 flex h-full min-h-[15rem] flex-col">

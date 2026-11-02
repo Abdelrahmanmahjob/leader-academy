@@ -15,11 +15,12 @@ import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
+import { CartButton } from "@/components/storefront/CartButton";
 import {
   authLinks,
   ctaClass,
   isActivePath,
-  loginClass,
   mobileLinks,
 } from "@/content/navigation";
 import { useDirection } from "@/hooks/useDirection";
@@ -286,17 +287,14 @@ export function MobileNavigation() {
                 data-footer
                 className="glass-panel mt-3 flex flex-wrap items-center justify-between gap-3 rounded-3xl p-3 [-webkit-backdrop-filter:none] [backdrop-filter:none]"
               >
-                <LanguageSwitcher />
+                <div className="flex items-center gap-2">
+                  <LanguageSwitcher />
+                  <ThemeSwitcher />
+                  <CartButton />
+                </div>
                 <div className="flex min-w-0 flex-1 gap-3">
                   <Link
                     href={authLinks.signin}
-                    className={`${loginClass} flex-1`}
-                    onClick={() => closeMenu(false)}
-                  >
-                    {t("login")}
-                  </Link>
-                  <Link
-                    href={authLinks.signUp}
                     className={`${ctaClass} flex-1`}
                     onClick={() => closeMenu(false)}
                   >

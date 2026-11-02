@@ -3,8 +3,7 @@ import { ServicesPathsSection } from "@/components/sections/services/ServicesPat
 
 export const metadata: Metadata = {
   title: "Services",
-  description:
-    "Explore strength, cardio, and mobility services at Leader Academy.",
+  description: "Explore football skills, conditioning, and player development at Leader Academy.",
 };
 
 export default function ServicesPage() {

@@ -10,20 +10,23 @@ const images: Record<ServiceId, string> = {
   cardio: "/images/home-page/our-paths/our-paths2.webp",
   mobility: "/images/home-page/our-paths/our-paths3.webp",
   football: "/images/home-page/our-paths/our-paths4.webp",
+  "women-strength": "/images/home-page/our-paths/women-path-1.webp",
+  "women-cardio": "/images/home-page/our-paths/women-path-2.webp",
+  "women-mobility": "/images/home-page/our-paths/women-path-3.webp",
+  "women-football": "/images/home-page/our-paths/women-path-4.webp",
 };
 
-export async function MoreServicesSection({
-  service,
-}: {
-  service: ServiceId;
-}) {
+export async function MoreServicesSection({ service }: { service: ServiceId }) {
   const selected = service;
   const root = await getTranslations("home.servicesPage");
   const services = root.raw("services") as Record<
     ServiceId,
     { name: string; eyebrow: string }
   >;
-  const others = SERVICE_IDS.filter((id) => id !== selected);
+  const isWomenPath = selected.startsWith("women-");
+  const others = SERVICE_IDS.filter(
+    (id) => id !== selected && id.startsWith("women-") === isWomenPath,
+  );
 
   return (
     <section className="border-b border-border bg-background py-16 sm:py-20 lg:py-24">

@@ -18,10 +18,14 @@ export async function generateMetadata({
   if (!isServiceId(service)) return {};
 
   const titles = {
-    strength: "Strength & Fitness",
-    cardio: "Cardio & Heart Health",
-    mobility: "Mobility & Recovery",
-    football: "Football Performance",
+    strength: "Football Skills & Technique",
+    cardio: "Football Conditioning",
+    mobility: "Football Movement & Recovery",
+    football: "Football Match Performance",
+    "women-strength": "Women’s Football Skills & Technique",
+    "women-cardio": "Women’s Football Conditioning",
+    "women-mobility": "Women’s Football Movement & Recovery",
+    "women-football": "Women’s Football Match Performance",
   } satisfies Record<(typeof SERVICE_IDS)[number], string>;
 
   return {

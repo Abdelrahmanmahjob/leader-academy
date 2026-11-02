@@ -23,7 +23,6 @@ export function AboutSection({
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
   useParallax(ref);
-
   return (
     <section
       ref={ref}

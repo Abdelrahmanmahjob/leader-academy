@@ -3,7 +3,8 @@ import { AboutHero } from "@/components/sections/about/AboutHero";
 import { AboutValues } from "@/components/sections/about/AboutValues";
 import { AboutVideo } from "@/components/sections/about/AboutVideo";
 import { AboutExperts } from "@/components/sections/about/AboutExperts";
-import { AboutMarquee } from "@/components/sections/about/AboutMarquee";
+import { AboutAchievements } from "@/components/sections/about/AboutAchievements";
+// import { AboutMarquee } from "@/components/sections/about/AboutMarquee";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -16,9 +17,10 @@ export default function AboutUsPage() {
     <main id="main-content">
       <AboutHero />
       <AboutValues />
+      <AboutAchievements />
       <AboutVideo />
       <AboutExperts />
-      <AboutMarquee />
+      {/* <AboutMarquee /> */}
     </main>
   );
 }

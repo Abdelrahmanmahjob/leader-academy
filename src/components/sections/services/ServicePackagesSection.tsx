@@ -24,6 +24,7 @@ export async function ServicePackagesSection({
           <p className="text-xs font-extrabold uppercase tracking-[.22em] text-accent rtl:tracking-normal">{root("packagesTitle")}</p>
           <h2 className="mt-4 text-[clamp(2rem,4vw,3.25rem)] font-extrabold uppercase tracking-[-0.04em] rtl:tracking-normal">{root("packagesTitle")}</h2>
           <p className="mt-4 text-base text-foreground/65 sm:text-lg">{serviceRoot("packagesDescription")}</p>
+          <p className="mt-2 text-sm text-foreground/50">{root("pricingNote")}</p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-14">
           {packages.map((pkg, index) => (

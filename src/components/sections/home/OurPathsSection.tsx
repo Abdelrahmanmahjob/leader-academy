@@ -9,17 +9,21 @@ import { useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/Button";
+import { PathAudienceToggle } from "@/components/ui/PathAudienceToggle";
 import { useDirection } from "@/hooks/useDirection";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 type PathCard = {
+  id: string;
   eyebrow: string;
   title: string;
   summary: string;
   description: string;
   image: string;
   href: string;
+  price: string;
+  packagePrice: string;
 };
 
 const shell = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12";
@@ -34,7 +38,10 @@ export function OurPathsSection({
   titleOverride,
 }: { titleOverride?: string } = {}) {
   const t = useTranslations("home.paths");
-  const cards = t.raw("cards") as PathCard[];
+  const [audience, setAudience] = useState<"men" | "women">("men");
+  const cards = t.raw(
+    audience === "men" ? "cards" : "womenCards",
+  ) as PathCard[];
   const { flip } = useDirection();
   // Keep the portrait width aligned with each card's collapsed share of the row.
   const rowStyle = {
@@ -228,6 +235,19 @@ export function OurPathsSection({
           {titleOverride ?? t("title")}
         </h2>
 
+        <div className="mt-7 flex justify-center">
+          <PathAudienceToggle
+            value={audience}
+            onChange={(value) => {
+              setAudience(value);
+              setActive(DEFAULT_ACTIVE);
+            }}
+            menLabel={t("menLabel")}
+            womenLabel={t("womenLabel")}
+            label={t("audienceLabel")}
+          />
+        </div>
+
         <div className="@container mt-10 lg:mt-14">
           <div
             ref={rowRef}
@@ -244,8 +264,9 @@ export function OurPathsSection({
 
               return (
                 <article
-                  key={card.title}
+                  key={card.id}
                   data-card
+                  data-path-id={card.id}
                   data-active={isActive}
                   className={`paths-card group/card relative isolate flex flex-col overflow-hidden rounded-[2rem] border border-accent/25 bg-[color-mix(in_srgb,var(--la-accent)_24%,var(--la-background))] p-4 transition-[background-color,border-color,box-shadow] duration-700 md:flex-row lg:min-h-[34rem] lg:basis-0 lg:data-[active=false]:border-border lg:data-[active=false]:bg-surface lg:data-[active=true]:shadow-[0_28px_70px_-28px_color-mix(in_srgb,var(--la-inverse)_90%,transparent)] ${
                     startsOpen ? "lg:grow-[2.36]" : "lg:grow"
@@ -308,7 +329,7 @@ export function OurPathsSection({
                       </p>
                       <p
                         data-reveal
-                        className={`mt-4 text-lg leading-8 text-foreground/90 xl:text-xl xl:leading-9 ${hiddenAtStart}`}
+                        className={`mt-4 sm:px-3 text-lg leading-8 text-foreground/90 xl:text-xl xl:leading-9 ${hiddenAtStart}`}
                       >
                         {card.description}
                       </p>
@@ -316,7 +337,7 @@ export function OurPathsSection({
                       <div className="mt-auto pt-8">
                         <h3
                           data-reveal
-                          className={`text-3xl font-extrabold leading-tight text-foreground sm:text-4xl ${hiddenAtStart}`}
+                          className={`text-2xl font-extrabold leading-tight text-foreground ${hiddenAtStart}`}
                         >
                           {card.title}
                         </h3>
@@ -325,6 +346,15 @@ export function OurPathsSection({
                           className={`mt-1 text-base font-medium text-accent ${hiddenAtStart}`}
                         >
                           {card.summary}
+                        </p>
+                        <p
+                          data-reveal
+                          className={`mt-3 text-sm font-bold text-foreground/75 ${hiddenAtStart}`}
+                        >
+                          {t("pathPrice", {
+                            price: card.price,
+                            packagePrice: card.packagePrice,
+                          })}
                         </p>
                         <div data-reveal className={hiddenAtStart}>
                           <Link

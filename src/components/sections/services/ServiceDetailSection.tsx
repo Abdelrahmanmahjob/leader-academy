@@ -10,6 +10,10 @@ const images: Record<ServiceId, string> = {
   cardio: "/images/home-page/our-paths/our-paths2.webp",
   mobility: "/images/home-page/our-paths/our-paths3.webp",
   football: "/images/home-page/our-paths/our-paths4.webp",
+  "women-strength": "/images/home-page/our-paths/women-path-1.webp",
+  "women-cardio": "/images/home-page/our-paths/women-path-2.webp",
+  "women-mobility": "/images/home-page/our-paths/women-path-3.webp",
+  "women-football": "/images/home-page/our-paths/women-path-4.webp",
 };
 
 export async function ServiceDetailSection({

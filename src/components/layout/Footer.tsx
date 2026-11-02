@@ -25,6 +25,7 @@ export async function Footer() {
     { href: "/services", label: nav("services") },
     { href: "/classes", label: nav("classes") },
     { href: "/trainers", label: t("meetTheTeam") },
+    { href: "/products", label: nav("products") },
   ];
 
   const consent = t.rich("consent", {
@@ -55,7 +56,6 @@ export async function Footer() {
               <Link
                 href="/"
                 className="inline-flex min-h-11 shrink-0 items-center gap-3 overflow-hidden"
-                aria-label={t("homeLabel")}
               >
                 <Image
                   src="/brand/logo.webp"
@@ -197,7 +197,7 @@ export async function Footer() {
               {PAYMENTS.map((payment) => (
                 <li
                   key={payment.name}
-                  className="relative h-8 w-[4rem] overflow-hidden rounded-md bg-foreground"
+                  className="relative h-8 w-[4rem] overflow-hidden rounded-md bg-white"
                 >
                   <Image
                     src={payment.src}

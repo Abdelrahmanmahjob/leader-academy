@@ -8,13 +8,14 @@ import { BrandLogo } from "./BrandLogo";
 import { ClassesDropdown } from "./ClassesDropdown";
 import { DockItemContent } from "./DockItem";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { MobileNavigation } from "./MobileNavigation";
+import { CartButton } from "@/components/storefront/CartButton";
 import {
   authLinks,
   ctaClass,
   dockItemClass,
   isActivePath,
-  loginClass,
   primaryLinks,
   trailingLinks,
 } from "@/content/navigation";
@@ -81,10 +82,9 @@ export function Navbar() {
 
             <div className="hidden items-center gap-2.5 lg:flex">
               <LanguageSwitcher />
-              <Link href={authLinks.signin} className={loginClass}>
-                {t("login")}
-              </Link>
-              <Link href={authLinks.signUp} className={ctaClass}>
+              <ThemeSwitcher />
+              <CartButton />
+              <Link href={authLinks.signin} className={ctaClass}>
                 {t("getStarted")}
               </Link>
             </div>
