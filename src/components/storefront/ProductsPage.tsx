@@ -5,6 +5,7 @@ import { ArrowDown, Check, Plus, ShoppingBasket, Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
+import { Link } from "@/i18n/navigation";
 import {
   PRODUCTS,
   type ProductCategory,
@@ -49,6 +50,7 @@ export function ProductsPage() {
   const [addedProductId, setAddedProductId] = useState<string | null>(null);
   const addedTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const categoryFiltersRef = useRef<HTMLDivElement>(null);
 
   const visibleProductCount =
     activeCategory === "all"
@@ -62,6 +64,26 @@ export function ProductsPage() {
     },
     [],
   );
+
+  useEffect(() => {
+    const filterList = categoryFiltersRef.current;
+    if (!filterList) return;
+
+    const handleWheel = (event: WheelEvent) => {
+      if (
+        filterList.scrollWidth <= filterList.clientWidth ||
+        Math.abs(event.deltaY) <= Math.abs(event.deltaX)
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+      filterList.scrollLeft += event.deltaY;
+    };
+
+    filterList.addEventListener("wheel", handleWheel, { passive: false });
+    return () => filterList.removeEventListener("wheel", handleWheel);
+  }, []);
 
   useGSAP(
     () => {
@@ -183,7 +205,8 @@ export function ProductsPage() {
           </div>
 
           <div
-            className="mt-7 flex gap-2 overflow-x-auto pb-2"
+            ref={categoryFiltersRef}
+            className="mt-7 flex gap-2 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             role="group"
             aria-label={t("filterLabel")}
           >
@@ -309,7 +332,12 @@ function ProductCard({
 }: ProductCardProps) {
   return (
     <li data-product-card="">
-      <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-border bg-surface transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-[0_26px_55px_-30px_color-mix(in_srgb,var(--la-inverse)_85%,transparent)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+      <article className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-border bg-surface transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-[0_26px_55px_-30px_color-mix(in_srgb,var(--la-inverse)_85%,transparent)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+        <Link
+          href={`/products/${product.id}`}
+          aria-label={name}
+          className="absolute inset-0 z-10 rounded-[24px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        />
         <div className="relative aspect-[1.15] overflow-hidden bg-surface-raised">
           <Image
             src={product.image}
@@ -390,7 +418,7 @@ function ProductCard({
               type="button"
               onClick={onAdd}
               aria-label={`${added ? addedLabel : addLabel}: ${name}`}
-              className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-extrabold transition-[background-color,color,transform,box-shadow] duration-300 active:scale-95 ${
+              className={`relative z-20 inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-extrabold transition-[background-color,color,transform,box-shadow] duration-300 active:scale-95 ${
                 added
                   ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-300"
                   : "bg-accent text-inverse shadow-[0_8px_22px_-12px_color-mix(in_srgb,var(--la-accent)_80%,transparent)] hover:shadow-[0_12px_26px_-10px_color-mix(in_srgb,var(--la-accent)_90%,transparent)]"

@@ -57,9 +57,9 @@
     "heroCardEyebrow": "Made for every session",
     "heroCardTitle": "Your training. Your colors.",
     "perks": {
-      "official": "Academy-inspired gear",
+      "official": "Official products",
       "training": "Ready for training days",
-      "demo": "Demo storefront"
+      "demo": "storefront"
     },
     "collectionEyebrow": "The collection",
     "collectionTitle": "Find your next favorite",
@@ -151,8 +151,15 @@
       }
     }
   },
+  "productDetail": {
+    "eyebrow": "Product details",
+    "productId": "Product ID",
+    "backToShop": "Back to all products",
+    "relatedEyebrow": "Keep exploring",
+    "relatedTitle": "You may also like"
+  },
   "footer": {
-    "brandDescription": "Leader Academy — established 2023.",
+    "brandDescription": "Leader Academy established 2023.",
     "quickLinks": "Quick links",
     "contact": "Contact",
     "contactCta": "Get in touch",
@@ -186,6 +193,13 @@
     "paymentMethods": "Accepted payment methods"
   },
   "home": {
+    "products": {
+      "eyebrow": "Academy shop",
+      "title": "Gear up for your next session",
+      "description": "Explore a few player favorites from our football apparel and training collection.",
+      "shopAll": "Shop all products",
+      "viewProduct": "View details"
+    },
     "hero": {
       "eyebrow": "Leader Academy — 2023",
       "label": "Featured highlights",
@@ -527,7 +541,7 @@
       ]
     },
     "partner": {
-      "title": "WHY Leader Academy IS YOUR IDEAL FITNESS PARTNER",
+      "title": "WHY Leader Academy IS YOUR IDEAL PARTNER",
       "videoLabel": "Leader Academy training experience",
       "benefits": [
         {

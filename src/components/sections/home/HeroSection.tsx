@@ -226,13 +226,13 @@ export function HeroSection() {
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-accent rtl:text-sm rtl:tracking-normal rtl:normal-case">
               {t("eyebrow")}
             </p>
-            <h1 className="text-[clamp(2.75rem,7vw,3.75rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.04em] text-foreground rtl:leading-[1.2] rtl:tracking-normal rtl:normal-case">
+            <h1 className="text-[clamp(2rem,7vw,3.75rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.04em] text-foreground rtl:leading-[1.2] rtl:tracking-normal rtl:normal-case">
               {t(`slides.${slideIndex}.title`)}
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-foreground/80 sm:text-lg">
               {t(`slides.${slideIndex}.description`)}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex gap-3">
               <Link
                 href={slide.primary}
                 className={buttonVariants({

@@ -5,6 +5,7 @@ import { WeeklyClassesSection } from "@/components/sections/home/WeeklyClassesSe
 import { PricingSection } from "@/components/sections/home/PricingSection";
 import { PartnerSection } from "@/components/sections/home/PartnerSection";
 import { AboutHero } from "@/components/sections/about/AboutHero";
+import { HomeProductsSection } from "@/components/sections/home/HomeProductsSection";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,6 +19,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutHero />
       <OurPathsSection />
+      <HomeProductsSection />
       <WeeklyClassesSection />
       <PricingSection />
       <PartnerSection />

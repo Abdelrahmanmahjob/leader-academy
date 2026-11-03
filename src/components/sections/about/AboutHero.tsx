@@ -25,14 +25,14 @@ export function AboutHero() {
 
       <div
         data-reveal="end"
-        className="relative order-1 min-h-[390px] overflow-hidden rounded-[28px] border border-border lg:order-2 lg:min-h-[520px]"
+        className="relative order-1 min-h-[400px] overflow-hidden rounded-[28px] border border-border lg:order-2 lg:min-h-[550px]"
       >
         <Image
           src="/images/about-page/about1.jpeg"
           alt={t("heroImageAlt")}
           fill
           sizes="(max-width: 1024px) 100vw, 45vw"
-          className="object-contain object-top"
+          className="object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-linear-to-t from-background/55 via-transparent to-transparent" />

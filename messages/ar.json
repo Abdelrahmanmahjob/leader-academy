@@ -57,9 +57,9 @@
     "heroCardEyebrow": "لكل حصة تدريبية",
     "heroCardTitle": "تدريبك. ألوانك.",
     "perks": {
-      "official": "مستلهم من الأكاديمية",
+      "official": "منتجات رسمية",
       "training": "جاهز ليوم التدريب",
-      "demo": "متجر تجريبي"
+      "demo": "متجر"
     },
     "collectionEyebrow": "المجموعة",
     "collectionTitle": "اعثر على اختيارك القادم",
@@ -151,8 +151,15 @@
       }
     }
   },
+  "productDetail": {
+    "eyebrow": "تفاصيل المنتج",
+    "productId": "رقم المنتج",
+    "backToShop": "العودة إلى كل المنتجات",
+    "relatedEyebrow": "تابع الاستكشاف",
+    "relatedTitle": "قد يعجبك أيضًا"
+  },
   "footer": {
-    "brandDescription": "Leader Academy — تأسست عام 2023.",
+    "brandDescription": "ليدر اكاديمي تأسست عام 2023.",
     "quickLinks": "روابط سريعة",
     "contact": "التواصل",
     "contactCta": "تواصل معنا",
@@ -186,6 +193,13 @@
     "paymentMethods": "طرق الدفع المتاحة"
   },
   "home": {
+    "products": {
+      "eyebrow": "متجر الأكاديمية",
+      "title": "استعد لحصتك التدريبية القادمة",
+      "description": "اكتشف بعض المنتجات المفضلة للاعبين من ملابس كرة القدم ومستلزمات التدريب.",
+      "shopAll": "عرض كل المنتجات",
+      "viewProduct": "عرض التفاصيل"
+    },
     "hero": {
       "eyebrow": "ليدر أكاديمي — 2023",
       "label": "أبرز العروض",
@@ -531,7 +545,7 @@
       ]
     },
     "partner": {
-      "title": "لماذا تعد Leader Academy شريكك المثالي للياقة",
+      "title": "لماذا تعد Leader Academy شريكك المثالي",
       "videoLabel": "تجربة التدريب في Leader Academy",
       "benefits": [
         {
