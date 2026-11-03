@@ -71,7 +71,7 @@ export async function Footer() {
               </p>
               <ul
                 aria-label={t("followUs")}
-                className="mt-5 flex gap-3  lg:pt-5"
+                className="mt-4 flex gap-3  lg:pt-5"
               >
                 {SOCIALS.map(({ id, href }) => (
                   <li key={id}>
@@ -80,9 +80,9 @@ export async function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={t(`social.${id}`)}
-                      className="glass-button flex size-11 items-center justify-center rounded-full border text-foreground transition-[transform,color] duration-300 [--glass-tint-mix:75%] [--glass-tint:var(--la-border-strong)] hover:-translate-y-0.5 hover:text-accent motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                      className="glass-button flex size-8 items-center justify-center rounded-full border text-foreground transition-[transform,color] duration-300 [--glass-tint-mix:75%] [--glass-tint:var(--la-border-strong)] hover:-translate-y-0.5 hover:text-accent motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
-                      <SocialIcon id={id} className="size-[1.125rem]" />
+                      <SocialIcon id={id} className="size-[.875rem]" />
                     </a>
                   </li>
                 ))}
@@ -197,7 +197,7 @@ export async function Footer() {
               {PAYMENTS.map((payment) => (
                 <li
                   key={payment.name}
-                  className="relative h-8 w-[4rem] overflow-hidden rounded-md bg-white"
+                  className="relative h-7 w-[3.3rem] overflow-hidden rounded-md bg-white"
                 >
                   <Image
                     src={payment.src}
