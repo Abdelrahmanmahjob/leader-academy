@@ -9,7 +9,12 @@ import { useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/Button";
+import { AgeGroupList } from "@/components/ui/AgeGroupList";
 import { PathAudienceToggle } from "@/components/ui/PathAudienceToggle";
+import {
+  getServiceAgeGroups,
+  getServiceIdFromHref,
+} from "@/content/ageGroups";
 import { useDirection } from "@/hooks/useDirection";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -327,6 +332,12 @@ export function OurPathsSection({
                       >
                         {card.eyebrow}
                       </p>
+                      <AgeGroupList
+                        ageGroups={getServiceAgeGroups(
+                          getServiceIdFromHref(card.href),
+                        )}
+                        className={`mt-2 ${hiddenAtStart}`}
+                      />
                       <p
                         data-reveal
                         className={`mt-4 sm:px-3 text-lg leading-8 text-foreground/90 xl:text-xl xl:leading-9 ${hiddenAtStart}`}

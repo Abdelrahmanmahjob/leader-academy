@@ -80,7 +80,7 @@ export async function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={t(`social.${id}`)}
-                      className="glass-button flex size-8 items-center justify-center rounded-full border text-foreground transition-[transform,color] duration-300 [--glass-tint-mix:75%] [--glass-tint:var(--la-border-strong)] hover:-translate-y-0.5 hover:text-accent motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                      className="glass-button flex size-9 items-center justify-center rounded-full border text-foreground transition-[transform,color] duration-300 [--glass-tint-mix:75%] [--glass-tint:var(--la-border-strong)] hover:-translate-y-0.5 hover:text-accent motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
                       <SocialIcon id={id} className="size-[.875rem]" />
                     </a>

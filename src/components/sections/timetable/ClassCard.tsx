@@ -7,6 +7,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useGlassSheen } from "@/hooks/useGlassSheen";
+import { AgeGroupList } from "@/components/ui/AgeGroupList";
+import type { AgeGroup } from "@/content/ageGroups";
 import type { ClassType } from "@/content/TimeTableData";
 
 const typeIcons: Record<ClassType, LucideIcon> = {
@@ -26,6 +28,7 @@ type ClassCardProps = {
   timeLabel: string;
   name: string;
   duration: string;
+  ageGroups: readonly AgeGroup[];
   detailsHref?: string;
   detailsLabel?: string;
 };
@@ -38,6 +41,7 @@ export function ClassCard({
   timeLabel,
   name,
   duration,
+  ageGroups,
 }: ClassCardProps) {
   const ref = useRef<HTMLElement>(null);
   const Icon = typeIcons[type];
@@ -77,6 +81,10 @@ export function ClassCard({
           <Clock className="size-4" aria-hidden="true" />
           {duration}
         </p>
+        <AgeGroupList
+          ageGroups={ageGroups}
+          className={`mt-2 ${type === "football" ? "text-white/75" : ""}`}
+        />
       </div>
     </article>
   );

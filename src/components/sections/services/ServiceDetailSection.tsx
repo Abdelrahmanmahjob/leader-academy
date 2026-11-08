@@ -2,6 +2,8 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/Button";
+import { AgeGroupList } from "@/components/ui/AgeGroupList";
+import { getServiceAgeGroups } from "@/content/ageGroups";
 import type { ServiceId } from "@/content/serviceIds";
 
 const shell = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 pt-15";
@@ -50,6 +52,10 @@ export async function ServiceDetailSection({
           <p className="text-xs font-extrabold uppercase tracking-[.22em] text-accent rtl:tracking-normal">
             {serviceT("eyebrow")}
           </p>
+          <AgeGroupList
+            ageGroups={getServiceAgeGroups(selected)}
+            className="mt-4 w-fit"
+          />
           <h2 className="mt-4 text-[clamp(2rem,4vw,3.75rem)] font-extrabold uppercase leading-[1.02] tracking-[-0.04em] text-foreground rtl:leading-[1.25] rtl:tracking-normal">
             {serviceT("name")}
           </h2>

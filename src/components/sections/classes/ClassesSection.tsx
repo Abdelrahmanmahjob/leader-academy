@@ -6,7 +6,12 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { AgeGroupList } from "@/components/ui/AgeGroupList";
 import { PathAudienceToggle } from "@/components/ui/PathAudienceToggle";
+import {
+  getServiceAgeGroups,
+  getServiceIdFromHref,
+} from "@/content/ageGroups";
 
 export function ClassesSection() {
   const t = useTranslations("classesPage");
@@ -35,7 +40,7 @@ export function ClassesSection() {
           </h1>
           <p className="mt-5 text-lg text-muted">{t("description")}</p>
         </div>
-        <div className="mb-8">
+        <div className="mb-8 flex justify-center">
           <PathAudienceToggle
             value={audience}
             onChange={setAudience}
@@ -68,6 +73,12 @@ export function ClassesSection() {
                 <p className="mt-3 mb-6 max-w-sm text-sm text-white/75">
                   {item.description}
                 </p>
+                <AgeGroupList
+                  ageGroups={getServiceAgeGroups(
+                    getServiceIdFromHref(item.href),
+                  )}
+                  className="mb-4 text-white/80"
+                />
                 <div className="flex flex-wrap gap-2">
                   <Link
                     href="/timetable"

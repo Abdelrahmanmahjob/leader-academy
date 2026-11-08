@@ -18,6 +18,14 @@ import {
 } from "@/content/TimeTableData";
 import { createFormatters } from "./TimeTableFormat";
 import { PathAudienceToggle } from "@/components/ui/PathAudienceToggle";
+import {
+  AGE_GROUPS,
+  getAgeGroupTranslationKey,
+  getServiceAgeGroups,
+  getServiceIdForClass,
+  isAgeGroup,
+  type AgeGroup,
+} from "@/content/ageGroups";
 
 gsap.registerPlugin(useGSAP);
 
@@ -48,10 +56,12 @@ function getLocalDateKey() {
 
 export function TimetableSection() {
   const t = useTranslations("timetablePage");
+  const ageGroupT = useTranslations("ageGroups");
   const locale = useLocale();
   const { flip } = useDirection();
   const format = useMemo(() => createFormatters(locale), [locale]);
   const [audience, setAudience] = useState<"men" | "women">("men");
+  const [ageGroup, setAgeGroup] = useState<AgeGroup | "all">("all");
   const days = audience === "men" ? timetable : womenTimetable;
 
   const [dayId, setDayId] = useState(timetable[0].id);
@@ -66,8 +76,7 @@ export function TimetableSection() {
     : null;
   const weekStart = currentDate ? getSaturdayStart(currentDate) : null;
   const todayId = currentDate
-    ? (days.find((item) => item.weekday === currentDate.getDay())?.id ??
-      null)
+    ? (days.find((item) => item.weekday === currentDate.getDay())?.id ?? null)
     : null;
 
   const rootRef = useRef<HTMLDivElement>(null);
@@ -162,14 +171,37 @@ export function TimetableSection() {
             </h1>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-8 flex flex-wrap items-end gap-5">
             <PathAudienceToggle
               value={audience}
               onChange={setAudience}
               menLabel={t("menLabel")}
               womenLabel={t("womenLabel")}
               label={t("audienceLabel")}
+              equalSize
             />
+            <label className="grid w-56 gap-2 text-sm font-bold text-foreground">
+              {/* <span>{t("ageGroupLabel")}</span> */}
+              <span className="glass-panel inline-flex h-14 w-full items-center rounded-full p-1.5">
+                <select
+                  value={ageGroup}
+                  onChange={(event) => {
+                    const value = event.currentTarget.value;
+                    if (value === "all" || isAgeGroup(value)) {
+                      setAgeGroup(value);
+                    }
+                  }}
+                  className="h-full w-full rounded-full font-inherit bg-transparent px-4 text-sm font-bold text-foreground outline-none"
+                >
+                  <option value="all">{t("allAgeGroups")}</option>
+                  {AGE_GROUPS.map((group) => (
+                    <option key={group} value={group}>
+                      {ageGroupT(`groups.${getAgeGroupTranslationKey(group)}`)}
+                    </option>
+                  ))}
+                </select>
+              </span>
+            </label>
           </div>
 
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
@@ -236,23 +268,39 @@ export function TimetableSection() {
             </h2>
 
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {day.sessions.map((session, index) => (
-                <ClassCard
-                  key={`${audience}-${day.id}-${session.time}`}
-                  pathId={`${audience}-${session.type}`}
-                  index={index}
-                  type={session.type}
-                  dateTime={session.time}
-                  timeLabel={format.time(session.time)}
-                  name={t(`classes.${audience}.${session.type}`)}
-                  duration={t("duration")}
-                  detailsHref={
-                    session.type === "football"
-                      ? "/services/football"
-                      : undefined
-                  }
-                />
-              ))}
+              {day.sessions
+                .filter((session) => {
+                  if (ageGroup === "all") return true;
+                  return getServiceAgeGroups(
+                    getServiceIdForClass(audience, session.type),
+                  ).includes(ageGroup);
+                })
+                .map((session, index) => {
+                  const sessionAgeGroups = getServiceAgeGroups(
+                    getServiceIdForClass(audience, session.type),
+                  );
+
+                  return (
+                    <ClassCard
+                      key={`${audience}-${day.id}-${session.time}`}
+                      pathId={`${audience}-${session.type}`}
+                      index={index}
+                      type={session.type}
+                      dateTime={session.time}
+                      timeLabel={format.time(session.time)}
+                      name={t(`classes.${audience}.${session.type}`)}
+                      duration={t("duration")}
+                      ageGroups={
+                        ageGroup === "all" ? sessionAgeGroups : [ageGroup]
+                      }
+                      detailsHref={
+                        session.type === "football"
+                          ? "/services/football"
+                          : undefined
+                      }
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>

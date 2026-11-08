@@ -32,7 +32,7 @@ export function AboutHero() {
           alt={t("heroImageAlt")}
           fill
           sizes="(max-width: 1024px) 100vw, 45vw"
-          className="object-cover object-top"
+          className="object-cover object-top hover:object-bottom transition-[object-position] duration-500"
           priority
         />
         <div className="absolute inset-0 bg-linear-to-t from-background/55 via-transparent to-transparent" />

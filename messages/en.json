@@ -206,13 +206,13 @@
       "slides": [
         {
           "title": "Your path to professionalism begins here",
-          "description": "Combine strength, flexibility, and endurance in a community that values well-rounded health and supportive growth.",
+          "description": "Want to join the professional league? Join us and reserve your seat with the professionals.",
           "primary": "Start Now",
           "secondary": "View Services"
         },
         {
-          "title": "TRAIN WITH PURPOSE",
-          "description": "Coaches, classes, and programs built around your goals — not a one-size-fits-all routine.",
+          "title": "Specialized training for all age groups",
+          "description": "Coaches, classes, and programs built around your goals — fit to your needs — all ages welcome.",
           "primary": "Meet Trainers",
           "secondary": "View Services"
         }
@@ -579,7 +579,7 @@
       "ctaTitle": "Train with the best",
       "ctaDescription": "Meet every coach on our team and find the one who fits your goals.",
       "introTitle": "EMPOWERING YOUR PROFESSIONAL JOURNEY",
-      "introDescription": "Welcome to Leader Academy, where a healthier, happier you starts with personalized training and a supportive community. Our studio is a space for transformation, where people of every fitness level come together to reach their goals. With a focus on innovation and inclusivity, training here is more than a workout — it's a lifestyle.",
+      "introDescription": "Leader Academy is designed to empower your professional journey by providing a supportive community, personalized training plans, and access to the best clubs in the Kingdom. Our mission is to help you achieve your goals and build a career that you're proud of.",
       "valuesEyebrow": "OUR VALUES",
       "valuesTitle": "OUR Core Values",
       "valuesDescription": "guide everything we do",
@@ -590,7 +590,7 @@
         },
         {
           "title": "Inclusivity",
-          "description": "Welcoming every body type, ability, and fitness level."
+          "description": "Offering a space where everyone feels welcome and respected."
         },
         {
           "title": "Innovation",
@@ -608,18 +608,18 @@
       "seeMore": "See more",
       "experts": [
         {
-          "name": "Strength Coach",
-          "role": "Performance & Strength",
+          "name": "Control Coach",
+          "role": "Ball Control & Technique",
           "image": "/images/trainer-page/coach1.jpeg"
         },
         {
-          "name": "Cardio Coach",
-          "role": "Endurance & Conditioning",
+          "name": "Fitness Coach",
+          "role": "Physical Fitness & Endurance",
           "image": "/images/trainer-page/coach2.jpg"
         },
         {
-          "name": "Mobility Coach",
-          "role": "Recovery & Movement",
+          "name": "Tactical Coach",
+          "role": "Strategy & Training",
           "image": "/images/trainer-page/coach3.webp"
         }
       ],
@@ -931,6 +931,18 @@
     "pricing": {
       "title": "FLEXIBLE PLANS FOR EVERY BUDGET",
       "description": "Choose a membership package and start training.",
+      "samplePricingNote": "Sample pricing only. Final prices and benefits may differ.",
+      "durationLabel": "Plan duration",
+      "durationOption": "{count, plural, one {# month} other {# months}}",
+      "oneYearOption": "1 year",
+      "membersLabel": "Number of players",
+      "individual": "Individual",
+      "siblingsOption": "{count} siblings",
+      "totalPrice": "SAR total",
+      "priceBreakdown": "SAR {monthlyPrice} × {months} months × {members} players",
+      "durationFeature": "{count, plural, one {#-month plan} other {#-month plan}}",
+      "oneYearFeature": "1-year plan (12 months)",
+      "membersFeature": "{count, plural, one {# player included} other {# players included}}",
       "period": "month",
       "features": "Features",
       "getStarted": "Get Started",
@@ -939,37 +951,38 @@
         {
           "name": "Basic",
           "price": "199",
-          "description": "Build a consistent training routine with essential gym access and support.",
+          "description": "Start a regular training routine with club access and basic support.",
           "features": [
-            "Full gym access",
-            "2 coached classes monthly",
-            "Fitness assessment",
-            "Basic training plan",
-            "Community support"
+            "Access to pitch facilities and fitness area during designated hours.",
+            "Attendance at group skill training sessions (2 times a week).",
+            "Basic training kit (shirt and shorts).",
+            "Initial physical assessment upon registration."
           ]
         },
         {
-          "name": "Professional",
+          "name": "Pro",
           "price": "399",
-          "description": "Train with more structure, variety, and guidance to accelerate your progress.",
+          "description": "Train with a varied plan and enhanced guidance for faster progress.",
           "features": [
-            "Unlimited gym access",
-            "8 coached classes monthly",
-            "Personal monthly review",
-            "Custom training program",
-            "Nutrition starter guide"
+            "Unlimited access to club facilities and training pitches.",
+            "Attendance at intensive group training sessions (4 times a week).",
+            "Specialized technical skills, tactical, and fitness sessions.",
+            "Two complete training kits + official club sports bag.",
+            "Bimonthly progress evaluations."
           ]
         },
         {
           "name": "Elite",
           "price": "699",
-          "description": "The complete performance package with premium coaching and recovery support.",
+          "description": "A comprehensive performance package including personalized training.",
           "features": [
-            "Unlimited gym access",
-            "Unlimited coached classes",
-            "Dedicated personal coach",
-            "Monthly performance review",
-            "Priority recovery sessions"
+            "1-on-1 personal training sessions with a certified coach.",
+            "Priority pitch booking and full access to all open/advanced classes.",
+            "Full official club kit + smart water bottle and branded towel.",
+            "Personalized nutrition coaching with a sports nutritionist.",
+            "Recovery sessions, physical therapy, and sports massage.",
+            "Video performance analysis for player matches.",
+            "Priority selection for tournaments and official matches."
           ]
         }
       ]
@@ -1074,6 +1087,15 @@
     },
     "viewSchedule": "View schedule"
   },
+  "ageGroups": {
+    "label": "Ages",
+    "groups": {
+      "tenToTwelve": "10–12",
+      "thirteenToFifteen": "13–15",
+      "sixteenToEighteen": "16–18",
+      "nineteenToTwentyOne": "19–21"
+    }
+  },
   "timetablePage": {
     "eyebrow": "WEEKLY PLAN",
     "title": "FOOTBALL TIMETABLE",
@@ -1083,6 +1105,8 @@
     "previousWeek": "Previous week",
     "nextWeek": "Next week",
     "audienceLabel": "Choose a training group",
+    "ageGroupLabel": "Age group",
+    "allAgeGroups": "All age groups",
     "menLabel": "Men",
     "womenLabel": "Women",
     "classes": {
